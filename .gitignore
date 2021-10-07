@@ -361,3 +361,18 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+#All Log Files
+**/.logs
+
+#All Suo Files
+**/.suo
+
+#All SQLite Files
+**/.sqlite
+
+#All json Files
+**/.json
+
+#Everything inside Debug
+Debug/
