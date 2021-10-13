@@ -16,5 +16,28 @@ namespace VillageAdventure
         {
             InitializeComponent();
         }
+
+        private void btn_newaccount_Click(object sender, EventArgs e)
+        {
+            frm_newAccount frm = new frm_newAccount();
+            frm.ShowDialog();
+        }
+
+        private void txt_password_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void chck_showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chck_showPassword.Checked == true)
+            {
+                txt_password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_password.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

@@ -17,3 +17,4 @@ C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\Villag
 C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.CoreCompileInputs.cache
 C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.exe
 C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.pdb
+C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.frm_newAccount.resources
