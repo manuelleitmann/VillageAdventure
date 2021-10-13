@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace VillageAdventure
 {
-    public partial class Form1 : Form
+    public partial class frm_main : Form
     {
-        public Form1()
+        public frm_main()
         {
             InitializeComponent();
+            pbx_background.Controls.Add(pbx_fire);
+            pbx_fire.BackColor = Color.Transparent;
+        }
+
+        private void pbx_fire_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
