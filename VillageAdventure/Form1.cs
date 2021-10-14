@@ -39,5 +39,10 @@ namespace VillageAdventure
                 txt_password.UseSystemPasswordChar = true;
             }
         }
+
+        private void frm_login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
