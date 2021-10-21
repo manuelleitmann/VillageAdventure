@@ -172,7 +172,6 @@ namespace VillageAdventure
             this.pbx_fire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_fire.TabIndex = 1;
             this.pbx_fire.TabStop = false;
-            this.pbx_fire.Click += new System.EventHandler(this.pbx_fire_Click);
             // 
             // pbx_background
             // 
@@ -248,7 +247,7 @@ namespace VillageAdventure
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Village Adventure";
-            this.Load += new System.EventHandler(this.frm_main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_main_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_tent4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_tent3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_tent2)).EndInit();

@@ -15,7 +15,7 @@ namespace VillageAdventure
         public frm_main()
         {
             InitializeComponent();
-
+            this.KeyPreview = true;
             #region Transparent
             pbx_background.Controls.Add(pbx_fire);
             pbx_fire.BackColor = Color.Transparent;
@@ -61,19 +61,32 @@ namespace VillageAdventure
             #endregion
         }
 
-        private void pbx_fire_Click(object sender, EventArgs e)
+        private void frm_main_KeyDown(object sender, KeyEventArgs e)
         {
             CharacterMovement giveUp = new CharacterMovement();
-           // int x = pbx_mainCharacter.Location.X;
-           // int y = pbx_mainCharacter.Location.Y;
+            giveUp.x = pbx_mainCharacter.Location.X;
+            giveUp.y = pbx_mainCharacter.Location.Y;
 
-
-            giveUp.MoveUp();
-        }
-
-        private void frm_main_Load(object sender, EventArgs e)
-        {
-
+            if (e.KeyCode == Keys.W)
+            {         
+                giveUp.MoveUp();
+                pbx_mainCharacter.Location = new Point(giveUp.x, giveUp.y);
+            }
+            else if (e.KeyCode == Keys.S)
+            {
+                giveUp.MoveDown();
+                pbx_mainCharacter.Location = new Point(giveUp.x, giveUp.y);
+            }
+            else if (e.KeyCode == Keys.A)
+            {
+                giveUp.MoveLeft();
+                pbx_mainCharacter.Location = new Point(giveUp.x, giveUp.y);
+            }
+            else if (e.KeyCode == Keys.D)
+            {
+                giveUp.MoveRight();
+                pbx_mainCharacter.Location = new Point(giveUp.x, giveUp.y);
+            }
         }
     }
 }
