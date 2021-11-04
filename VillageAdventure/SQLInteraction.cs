@@ -11,13 +11,27 @@ namespace VillageAdventure
 {
     class SQLInteraction
     {
-        string conStr = "";
+        //string conStr = "";
         public static SqlConnection con = new SqlConnection();
         static SqlCommand cmd = new SqlCommand();
         private static SqlDataAdapter sda = new SqlDataAdapter();
         private static SqlCommandBuilder cmdbuild = new SqlCommandBuilder();
         private static DataTable dt = new DataTable();
 
+        public static void CheckDB()
+        {
+            try
+            {
+                SetConnectionString("DataSource=(Localdb)\\MSSQLLocalDB;Intergrated Security=SSPI;");
+                con.Open();
+                
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         public static string GetConnectionString()
         {
@@ -30,22 +44,7 @@ namespace VillageAdventure
             cmd.Connection = con;
         }
 
-        public static bool CheckServer()
-        {
-            try
-            {
-                con.Open();
-                GetConnectionString();
-                con.Close();
-                return true;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
+        
         
         public static void Execute(string command)
         {

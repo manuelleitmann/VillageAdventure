@@ -43,7 +43,7 @@ namespace VillageAdventure
 
         private void frm_login_Load(object sender, EventArgs e)
         {
-            SQLInteraction.SetConnectionString("DataSource=(Localdb)\\MSSQLLocalDB;Intergrated Security=SSPI;");
+            //SQLInteraction.SetConnectionString();
 
             SQLInteraction.CheckServer();
 
