@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace VillageAdventure
 {
@@ -42,7 +43,11 @@ namespace VillageAdventure
 
         private void frm_login_Load(object sender, EventArgs e)
         {
+            SQLInteraction.SetConnectionString("DataSource=(Localdb)\\MSSQLLocalDB;Intergrated Security=SSPI;");
 
+            SQLInteraction.CheckServer();
+
+            
         }
     }
 }

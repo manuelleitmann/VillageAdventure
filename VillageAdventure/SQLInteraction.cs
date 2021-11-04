@@ -11,43 +11,54 @@ namespace VillageAdventure
 {
     class SQLInteraction
     {
-        static SqlConnection con = new SqlConnection();
+        string conStr = "";
+        public static SqlConnection con = new SqlConnection();
         static SqlCommand cmd = new SqlCommand();
         private static SqlDataAdapter sda = new SqlDataAdapter();
-        private static SqlCommandBuilder cmdbuilder = new SqlCommandBuilder();
-        private static DataTable datTab = new DataTable();
+        private static SqlCommandBuilder cmdbuild = new SqlCommandBuilder();
+        private static DataTable dt = new DataTable();
 
 
-        //Checks if Connection to Database is possible
-        public static bool TryConnection()
+        public static string GetConnectionString()
+        {
+            return con.ConnectionString;
+        }
+
+        public static void SetConnectionString(string setConStr)
+        {
+            con.ConnectionString = GetConnectionString();
+            cmd.Connection = con;
+        }
+
+        public static bool CheckServer()
         {
             try
             {
                 con.Open();
+                GetConnectionString();
                 con.Close();
                 return true;
+
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
-
-        public static DataTable GetDataTable(string command)
+        
+        public static void Execute(string command)
         {
             try
             {
-                datTab = new DataTable();
-                sda.SelectCommand = new SqlCommand(command, con);
-                sda.Fill(datTab);
-                return datTab;
+                con.Open();
+                cmd.CommandText = command;
+                cmd.ExecuteNonQuery();
+                con.Close();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                MessageBox.Show(e.Message);
-                datTab = new DataTable();
-                return datTab;
+                MessageBox.Show(ex.Message);
             }
         }
     }
