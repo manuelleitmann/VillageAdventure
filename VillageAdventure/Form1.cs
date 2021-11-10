@@ -45,7 +45,8 @@ namespace VillageAdventure
         {
             //SQLInteraction.SetConnectionString();
 
-            SQLInteraction.CheckServer();
+            
+            SQLInteraction.CreateDatabase("VillageAdventure");
 
             
         }
