@@ -58,35 +58,65 @@ namespace VillageAdventure
 
             pbx_background.Controls.Add(pbx_bush4);
             pbx_bush4.BackColor = Color.Transparent;
+
+            pbx_background.Controls.Add(pbx_mainCharacter);
+            pbx_mainCharacter.BackColor = Color.Transparent;
+
+            pbx_background.Controls.Add(pbx_logo);
+            pbx_logo.BackColor = Color.Transparent;
+           
+            pbx_background.Controls.Add(pbx_menuButton);
+            pbx_menuButton.BackColor = Color.Transparent;
             #endregion
         }
 
         private void frm_main_KeyDown(object sender, KeyEventArgs e)
         {
-            CharacterMovement giveUp = new CharacterMovement();
-            giveUp.x = pbx_mainCharacter.Location.X;
-            giveUp.y = pbx_mainCharacter.Location.Y;
+            //to get the methods and variables from the "CharacterMovement" class
+            CharacterMovement giveDirections = new CharacterMovement();
+            giveDirections.x = pbx_mainCharacter.Location.X;
+            giveDirections.y = pbx_mainCharacter.Location.Y;
 
             if (e.KeyCode == Keys.W)
-            {         
-                giveUp.MoveUp();
-                pbx_mainCharacter.Location = new Point(giveUp.x, giveUp.y);
+            {
+                giveDirections.MoveUp();
+                //to refresh the location of the picture box
+                pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
             }
             else if (e.KeyCode == Keys.S)
             {
-                giveUp.MoveDown();
-                pbx_mainCharacter.Location = new Point(giveUp.x, giveUp.y);
+                giveDirections.MoveDown();
+                pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
             }
             else if (e.KeyCode == Keys.A)
             {
-                giveUp.MoveLeft();
-                pbx_mainCharacter.Location = new Point(giveUp.x, giveUp.y);
+                giveDirections.MoveLeft();
+                pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
             }
             else if (e.KeyCode == Keys.D)
             {
-                giveUp.MoveRight();
-                pbx_mainCharacter.Location = new Point(giveUp.x, giveUp.y);
+                giveDirections.MoveRight();
+                pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
             }
+        }
+
+        private void tmr_main_Tick(object sender, EventArgs e)
+        {
+            //to make the logo invisable
+            pbx_logo.Visible = false;
+            //to disable the timer --> timer only starts when mouse hovers the menu button --> hover effect always lasts for exactly one second
+            tmr_main.Enabled = false;
+            tmr_main.Interval = 1000;
+            //change image of the menu button back to normal
+            pbx_menuButton.Image = VillageAdventure.Properties.Resources.menuButton;
+        }
+
+        private void pbx_menuButton_MouseHover(object sender, EventArgs e)
+        {
+            //switch picture when mouse hovers
+            pbx_menuButton.Image = VillageAdventure.Properties.Resources.menuButtonHover;
+            //enable the timer
+            tmr_main.Enabled = true;
         }
     }
 }

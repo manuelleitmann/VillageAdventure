@@ -9,11 +9,13 @@ namespace VillageAdventure
     class CharacterMovement : frm_main
     {
         #region Variables
+        //variables for movement
         public int x;
         public int y;
         #endregion
 
         #region Move
+        //methods for movement
         public void MoveUp()
         {          
             y -= 5;

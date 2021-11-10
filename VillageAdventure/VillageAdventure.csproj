@@ -104,5 +104,17 @@
   <ItemGroup>
     <None Include="Resources\bush.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoBGremoved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuButtonHover.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

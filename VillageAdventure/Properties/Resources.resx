@@ -127,6 +127,18 @@
   <data name="FireGIF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FireGIF.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LogoBGremoved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoBGremoved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuButtonHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuButtonHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tent1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tent1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
