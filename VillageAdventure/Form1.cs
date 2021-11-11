@@ -74,14 +74,17 @@ namespace VillageAdventure
         {
             //to get the methods and variables from the "CharacterMovement" class
             CharacterMovement giveDirections = new CharacterMovement();
+
             giveDirections.x = pbx_mainCharacter.Location.X;
             giveDirections.y = pbx_mainCharacter.Location.Y;
 
+            //write in timer not in KeyDown
+            #region Keys
             if (e.KeyCode == Keys.W)
             {
-                giveDirections.MoveUp();
-                //to refresh the location of the picture box
-                pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
+                    giveDirections.MoveUp();
+                    //to refresh the location of the picture box
+                    pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
             }
             else if (e.KeyCode == Keys.S)
             {
@@ -97,6 +100,25 @@ namespace VillageAdventure
             {
                 giveDirections.MoveRight();
                 pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
+            }
+            #endregion
+           
+            if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent1.Bounds))
+            {
+                pbx_tent1.Location = new Point(800, 800);
+
+                DialogResult dialogResult = MessageBox.Show("Do you want to play the Race Game?", "Race Game", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    RaceGame openRace = new RaceGame();
+                    this.Hide();
+                    openRace.ShowDialog();
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    pbx_tent1.Location = new Point(426, 319);
+                }
             }
         }
 
@@ -117,6 +139,11 @@ namespace VillageAdventure
             pbx_menuButton.Image = VillageAdventure.Properties.Resources.menuButtonHover;
             //enable the timer
             tmr_main.Enabled = true;
+        }
+
+        private void pbx_menuButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
