@@ -12,110 +12,51 @@ namespace VillageAdventure
     class SQLInteraction
     {
         //string conStr = "";
-        public static SqlConnection con = new SqlConnection("Server=(localdb)\\MSSQLLocalDB;Integrated Security=SSPI;");
+        public static SqlConnection con = new SqlConnection();
         static SqlCommand cmd = new SqlCommand();
         private static SqlDataAdapter sda = new SqlDataAdapter();
         private static SqlCommandBuilder cmdbuild = new SqlCommandBuilder();
         private static DataTable dt = new DataTable();
 
-        public static bool CheckDB()
-        {
-            bool result = false;
-            string dbcmd;
 
+        public static void CreateDatabase(string dbname)
+        {
             try
             {
-                dbcmd = string.Format("SELECT 'username' FROM sys.databases WHERE Name = 'VillageAdventure';");
-
-                //SetConnectionString("DataSource=(Localdb)\\MSSQLLocalDB;Intergrated Security=SSPI;");
-                using (con)
-                {
-                    using (SqlCommand com = new SqlCommand(dbcmd, con))
-                    {
-                        con.Open();
-
-                        object resultObj = com.ExecuteScalar();
-
-                        int databaseID = 0;
-
-                        if (resultObj != null)
-                        {
-                            int.TryParse(resultObj.ToString(), out databaseID);
-                        }
-
-                        con.Close();
-
-                        result = databaseID > 0;
-                    }
-                }
-                MessageBox.Show("Database exist!");
+                con.ConnectionString = @"Server=(localdb)\MSSQLLocalDB;";
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "if not exists(select * from sys.databases where name = '" + dbname + "') begin create database[" + dbname + "] end";
+                cmd.Connection = con;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();               
+                MessageBox.Show("Database created!");
             }
-            catch(Exception ex)
+            catch(Exception e)
             {
-                MessageBox.Show(ex.Message);
-                result = false;
+                MessageBox.Show(e.Message);
             }
-            return result;
-        }
-
-        public static bool CreateDatabase(string dbname)
-        {
-            String CreateDatabase;
             
-            bool IsExits = CheckDB(); //Check database exists in sql server.
-            if (!IsExits)
-            {
-                CreateDatabase = "CREATE DATABASE " + dbname + " ; ";
-                SqlCommand command = new SqlCommand(CreateDatabase, con);
-                try
-                {
-                    con.Open();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Database created!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return false;
-                }
-                finally
-                {
-                    if (con.State == ConnectionState.Open)
-                    {
-                        con.Close();
-                    }
-                }
-                return true;
-            }
-            return false;
         }
-
-        public static string GetConnectionString()
-        {
-            return con.ConnectionString;
-        }
-
-        public static void SetConnectionString(string setConStr)
-        {
-            con.ConnectionString = GetConnectionString();
-            cmd.Connection = con;
-        }
-
         
-        
-        public static void Execute(string command)
+        public static void CreateTable(string dbname, string tablename)
         {
             try
             {
                 con.Open();
-                cmd.CommandText = command;
+                cmd.CommandText = "use [" + dbname + "] if not exists(select * from sysobjects where name = '" + tablename + "') begin create table " + tablename + "(Id int NOT NULL Primary Key,username varchar(50),password varchar(50)) end";
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
-            catch (Exception ex)
+            catch(Exception e)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(e.Message);
             }
+        }
+
+        public static void InsertInto(string tablename)
+        {
+
         }
     }
 }

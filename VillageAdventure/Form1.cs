@@ -47,6 +47,7 @@ namespace VillageAdventure
 
             
             SQLInteraction.CreateDatabase("VillageAdventure");
+            SQLInteraction.CreateTable("VillageAdventure", "Login");
 
             
         }
