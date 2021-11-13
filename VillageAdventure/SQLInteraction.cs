@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace VillageAdventure
 {
-    class SQLInteraction
+    class SQLInteraction : frm_login
     {
         //string conStr = "";
         public static SqlConnection con = new SqlConnection();
@@ -30,7 +30,7 @@ namespace VillageAdventure
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();               
-                MessageBox.Show("Database created!");
+                //MessageBox.Show("Database created!");
             }
             catch(Exception e)
             {
@@ -54,9 +54,38 @@ namespace VillageAdventure
             }
         }
 
-        public static void InsertInto(string tablename)
+        public static void CheckTable(string tablename, string username, string password)
         {
+            try
+            {
+                con.Open();
+                cmd.CommandText = "";
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
 
+        public static void InsertInto(string tablename, string v_username, string v_password)
+        {
+            
+
+
+            try
+            {
+                con.Open();
+                
+                cmd.CommandText = "insert into " + tablename + "(Id,username,password) values("+  + "@username,@password)";
+                cmd.Parameters.AddWithValue("@username",v_username);
+                cmd.Parameters.AddWithValue("@password", v_password);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }

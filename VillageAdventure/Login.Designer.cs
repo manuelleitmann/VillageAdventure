@@ -78,6 +78,7 @@ namespace VillageAdventure
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(198, 27);
             this.txt_username.TabIndex = 3;
+            this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
             // 
             // txt_password
             // 
@@ -109,6 +110,7 @@ namespace VillageAdventure
             this.btn_login.TabIndex = 7;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // pbx_logo
             // 

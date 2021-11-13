@@ -18,3 +18,15 @@ C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\Villag
 C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.exe
 C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.pdb
 C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.frm_newAccount.resources
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\bin\Debug\VillageAdventure.exe.config
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\bin\Debug\VillageAdventure.exe
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\bin\Debug\VillageAdventure.pdb
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.AssemblyReference.cache
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.frm_login.resources
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.frm_newAccount.resources
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.Properties.Resources.resources
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.GenerateResource.cache
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.exe
+C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.pdb
