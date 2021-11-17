@@ -37,8 +37,10 @@ namespace VillageAdventure
             this.pbx_barrierOne = new System.Windows.Forms.PictureBox();
             this.pbx_changeDirection = new System.Windows.Forms.PictureBox();
             this.pbx_enemy = new System.Windows.Forms.PictureBox();
-            this.pbx_changeDirection2 = new System.Windows.Forms.PictureBox();
+            this.pbx_changeDirectionLeft = new System.Windows.Forms.PictureBox();
             this.tmr_raceGame = new System.Windows.Forms.Timer(this.components);
+            this.tmr_left = new System.Windows.Forms.Timer(this.components);
+            this.tmr_down = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_car)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_finishLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_barrierThree)).BeginInit();
@@ -46,7 +48,7 @@ namespace VillageAdventure
             ((System.ComponentModel.ISupportInitialize)(this.pbx_barrierOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_changeDirection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_enemy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_changeDirection2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_changeDirectionLeft)).BeginInit();
             this.SuspendLayout();
             // 
             // pbx_car
@@ -99,7 +101,7 @@ namespace VillageAdventure
             this.pbx_changeDirection.BackColor = System.Drawing.Color.Transparent;
             this.pbx_changeDirection.Location = new System.Drawing.Point(1000, 12);
             this.pbx_changeDirection.Name = "pbx_changeDirection";
-            this.pbx_changeDirection.Size = new System.Drawing.Size(53, 471);
+            this.pbx_changeDirection.Size = new System.Drawing.Size(53, 131);
             this.pbx_changeDirection.TabIndex = 5;
             this.pbx_changeDirection.TabStop = false;
             // 
@@ -112,26 +114,34 @@ namespace VillageAdventure
             this.pbx_enemy.TabIndex = 6;
             this.pbx_enemy.TabStop = false;
             // 
-            // pbx_changeDirection2
+            // pbx_changeDirectionLeft
             // 
-            this.pbx_changeDirection2.BackColor = System.Drawing.Color.Transparent;
-            this.pbx_changeDirection2.Location = new System.Drawing.Point(51, 465);
-            this.pbx_changeDirection2.Name = "pbx_changeDirection2";
-            this.pbx_changeDirection2.Size = new System.Drawing.Size(967, 37);
-            this.pbx_changeDirection2.TabIndex = 7;
-            this.pbx_changeDirection2.TabStop = false;
+            this.pbx_changeDirectionLeft.BackColor = System.Drawing.Color.Transparent;
+            this.pbx_changeDirectionLeft.Location = new System.Drawing.Point(888, 423);
+            this.pbx_changeDirectionLeft.Name = "pbx_changeDirectionLeft";
+            this.pbx_changeDirectionLeft.Size = new System.Drawing.Size(142, 37);
+            this.pbx_changeDirectionLeft.TabIndex = 7;
+            this.pbx_changeDirectionLeft.TabStop = false;
             // 
             // tmr_raceGame
             // 
             this.tmr_raceGame.Enabled = true;
             this.tmr_raceGame.Tick += new System.EventHandler(this.tmr_raceGame_Tick);
             // 
+            // tmr_left
+            // 
+            this.tmr_left.Tick += new System.EventHandler(this.tmr_left_Tick);
+            // 
+            // tmr_down
+            // 
+            this.tmr_down.Tick += new System.EventHandler(this.tmr_down_Tick);
+            // 
             // RaceGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1030, 495);
-            this.Controls.Add(this.pbx_changeDirection2);
+            this.Controls.Add(this.pbx_changeDirectionLeft);
             this.Controls.Add(this.pbx_enemy);
             this.Controls.Add(this.pbx_changeDirection);
             this.Controls.Add(this.pbx_car);
@@ -150,7 +160,7 @@ namespace VillageAdventure
             ((System.ComponentModel.ISupportInitialize)(this.pbx_barrierOne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_changeDirection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_enemy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_changeDirection2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_changeDirectionLeft)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,7 +174,9 @@ namespace VillageAdventure
         private System.Windows.Forms.PictureBox pbx_car;
         private System.Windows.Forms.PictureBox pbx_changeDirection;
         private System.Windows.Forms.PictureBox pbx_enemy;
-        private System.Windows.Forms.PictureBox pbx_changeDirection2;
+        private System.Windows.Forms.PictureBox pbx_changeDirectionLeft;
         private System.Windows.Forms.Timer tmr_raceGame;
+        private System.Windows.Forms.Timer tmr_left;
+        private System.Windows.Forms.Timer tmr_down;
     }
 }

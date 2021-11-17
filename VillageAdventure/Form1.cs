@@ -143,7 +143,10 @@ namespace VillageAdventure
 
         private void pbx_menuButton_Click(object sender, EventArgs e)
         {
-
+            Menu openMenu = new Menu();
+            this.Hide();
+            openMenu.ShowDialog();
+            this.Close();
         }
     }
 }

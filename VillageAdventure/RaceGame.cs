@@ -46,7 +46,7 @@ namespace VillageAdventure
                 pbx_car.Location = new Point(giveDirections.x, giveDirections.y);
             }
         }
-        //fix not moving
+        //remove multiple timers --> try to make with one timer
         private void tmr_raceGame_Tick(object sender, EventArgs e)
         {
             int x = 7;
@@ -54,15 +54,32 @@ namespace VillageAdventure
 
             if (pbx_enemy.Bounds.IntersectsWith(pbx_changeDirection.Bounds))
             {
-                x = 0;
-                y = 7;
+                tmr_down.Enabled = true;
+                tmr_raceGame.Enabled = false;
             }
-            else if (pbx_enemy.Bounds.IntersectsWith(pbx_changeDirection2.Bounds))
+           
+            pbx_enemy.Top += y;
+            pbx_enemy.Left += x;
+        }
+
+        private void tmr_left_Tick(object sender, EventArgs e)
+        {
+            int x = 7;
+            int y = 0;
+
+            pbx_enemy.Top += y;
+            pbx_enemy.Left -= x;
+        }
+
+        private void tmr_down_Tick(object sender, EventArgs e)
+        {
+            int x = 0;
+            int y = 7;
+
+            if (pbx_enemy.Bounds.IntersectsWith(pbx_changeDirectionLeft.Bounds))
             {
-                x = 14;
-                y = 0;
-                
-                pbx_enemy.Left -= x;
+                tmr_down.Enabled = false;
+                tmr_left.Enabled = true;
             }
 
             pbx_enemy.Top += y;
