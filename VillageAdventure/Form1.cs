@@ -16,7 +16,7 @@ namespace VillageAdventure
         private bool left = false;
         private bool right = false;
         private bool jump = false;
-        private int gravity = 15;
+        private int gravity = 25;
         private int force = 0;
         private int speed = 10;
         private bool playerOnFloor;
@@ -73,16 +73,21 @@ namespace VillageAdventure
                 pbx_player.Left += speed;
             }
 
+            if(playerOnFloor == true)
+            {
+                pbx_player.BackColor = Color.Yellow;
+            }
             if (jump)
             {
                 pbx_player.Top -= force;
                 force -= 2;
             }
-            if (pbx_player.Bounds.IntersectsWith(pbx_platform.Bounds))
+            if (pbx_player.Bounds.IntersectsWith(pbx_platform.Bounds) || pbx_player.Bounds.IntersectsWith(pbx_platform2.Bounds))//do it with tags
             {
-                pbx_player.Top = ClientSize.Height - pbx_player.Height - pbx_platform.Height;                
-            }
 
+                pbx_player.Top = ClientSize.Height - pbx_player.Height - pbx_platform.Height;
+
+            }
         }
     }
 }
