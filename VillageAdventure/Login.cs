@@ -59,7 +59,7 @@ namespace VillageAdventure
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            SQLInteraction.InsertInto("Login",txt_username.ToString(),txt_password.ToString());
+            
         }
     }
 }

@@ -44,7 +44,7 @@ namespace VillageAdventure
             try
             {
                 con.Open();
-                cmd.CommandText = "use [" + dbname + "] if not exists(select * from sysobjects where name = '" + tablename + "') begin create table " + tablename + "(Id int NOT NULL Primary Key,username varchar(50),password varchar(50)) end";
+                cmd.CommandText = "use [" + dbname + "] if not exists(select * from sysobjects where name = '" + tablename + "') begin create table " + tablename + "(Id int NOT NULL Primary Key,username varchar(20),password varchar(70)) end";
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -54,12 +54,13 @@ namespace VillageAdventure
             }
         }
 
-        public static void CheckTable(string tablename, string username, string password)
+        public static void CheckTable(string tablename, string v_username, string v_password)
         {
             try
             {
+                con.ConnectionString = @"Server=(localdb)\MSSQLLocalDB; Database=VillageAdventure";
                 con.Open();
-                cmd.CommandText = "";
+                cmd.CommandText = "Select "+ v_username + ", " + v_password + " from" + v_password;
             }
             catch(Exception e)
             {
@@ -69,16 +70,14 @@ namespace VillageAdventure
 
         public static void InsertInto(string tablename, string v_username, string v_password)
         {
-            
 
+             
 
             try
             {
+                con.ConnectionString = @"Server=(localdb)\MSSQLLocalDB; Database=VillageAdventure";
                 con.Open();
-                
-                cmd.CommandText = "insert into " + tablename + "(Id,username,password) values("+  + "@username,@password)";
-                cmd.Parameters.AddWithValue("@username",v_username);
-                cmd.Parameters.AddWithValue("@password", v_password);
+                cmd.CommandText = "INSERT INTO " + tablename +"(username,password) VALUES('" + v_username + "', '" + v_password + "')";
                 cmd.ExecuteNonQuery();
                 con.Close();
             }

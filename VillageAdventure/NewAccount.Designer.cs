@@ -51,6 +51,7 @@ namespace VillageAdventure
             this.btn_register.TabIndex = 15;
             this.btn_register.Text = "Register";
             this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // txt_password1
             // 
@@ -144,6 +145,7 @@ namespace VillageAdventure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(386, 398);
             this.Controls.Add(this.chck_showPasswordRegister);
             this.Controls.Add(this.txt_password2);
@@ -158,6 +160,7 @@ namespace VillageAdventure
             this.Name = "frm_newAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Account";
+            this.Load += new System.EventHandler(this.frm_newAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
