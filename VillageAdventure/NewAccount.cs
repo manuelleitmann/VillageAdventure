@@ -33,15 +33,22 @@ namespace VillageAdventure
 
         private void btn_register_Click(object sender, EventArgs e)
         {
+            string salt;
+            string hashedpw;
+
             if (txt_password1.Text == txt_password2.Text)
             {
-                SQLInteraction.InsertInto("Login", txt_usernameRegister.Text, txt_password2.Text);
+                salt = BCrypt.GenerateSalt();
+                
+                hashedpw = BCrypt.HashPassword(txt_password2.Text, salt);
 
-                MessageBox.Show("New Account created!");
+                SQLInteraction.InsertInto("Login", txt_usernameRegister.Text, hashedpw);
+
+                MessageBox.Show("New Account created!", "Account created!");
             }
             else
             {
-                MessageBox.Show("Passwords not matching");
+                MessageBox.Show("Passwords not matching", "Password Error!");
             }
             
         }

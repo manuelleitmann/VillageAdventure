@@ -14,9 +14,7 @@ namespace VillageAdventure
         //string conStr = "";
         public static SqlConnection con = new SqlConnection();
         static SqlCommand cmd = new SqlCommand();
-        private static SqlDataAdapter sda = new SqlDataAdapter();
         private static SqlCommandBuilder cmdbuild = new SqlCommandBuilder();
-        private static DataTable dt = new DataTable();
 
 
         public static void CreateDatabase(string dbname)
@@ -56,11 +54,26 @@ namespace VillageAdventure
 
         public static void CheckTable(string tablename, string v_username, string v_password)
         {
+            string hashedpw;
             try
             {
                 con.ConnectionString = @"Server=(localdb)\MSSQLLocalDB; Database=VillageAdventure";
                 con.Open();
-                cmd.CommandText = "Select "+ v_username + ", " + v_password + " from" + v_password;
+                cmd.CommandText = "Select password From Login Where username='" + v_username + "'";
+                hashedpw = (string)cmd.ExecuteScalar();
+                //hashedpw = v_password;
+                if(hashedpw != null)
+                {
+                    if(BCrypt.CheckPassword(v_password, hashedpw))
+                    {
+                        MessageBox.Show("You are now logged in!","Logged In!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password is not matching!","Password wrong!");
+                    }
+                }
+                con.Close(); 
             }
             catch(Exception e)
             {

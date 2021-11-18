@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text;
 using System.Security.Cryptography;
 
-namespace StudioManager
+namespace VillageAdventure
 {
     class BCrypt
     {

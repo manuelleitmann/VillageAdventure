@@ -117,7 +117,7 @@ namespace VillageAdventure
             this.txt_password2.Location = new System.Drawing.Point(143, 247);
             this.txt_password2.Name = "txt_password2";
             this.txt_password2.Size = new System.Drawing.Size(198, 27);
-            this.txt_password2.TabIndex = 17;
+            this.txt_password2.TabIndex = 13;
             this.txt_password2.UseSystemPasswordChar = true;
             // 
             // lbl_password2
