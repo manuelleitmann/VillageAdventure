@@ -58,7 +58,7 @@ namespace VillageAdventure
             // pbx_platform
             // 
             this.pbx_platform.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pbx_platform.Location = new System.Drawing.Point(-1, 534);
+            this.pbx_platform.Location = new System.Drawing.Point(-4, 252);
             this.pbx_platform.Name = "pbx_platform";
             this.pbx_platform.Size = new System.Drawing.Size(355, 19);
             this.pbx_platform.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace VillageAdventure
             // pbx_platform2
             // 
             this.pbx_platform2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pbx_platform2.Location = new System.Drawing.Point(494, 534);
+            this.pbx_platform2.Location = new System.Drawing.Point(415, 476);
             this.pbx_platform2.Name = "pbx_platform2";
             this.pbx_platform2.Size = new System.Drawing.Size(355, 19);
             this.pbx_platform2.TabIndex = 3;
