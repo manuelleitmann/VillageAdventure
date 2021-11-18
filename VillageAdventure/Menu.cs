@@ -16,5 +16,18 @@ namespace VillageAdventure
         {
             InitializeComponent();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm_main openMainfromMenu = new frm_main();
+            this.Hide();
+            openMainfromMenu.ShowDialog();
+            this.Close();
+        }
     }
 }

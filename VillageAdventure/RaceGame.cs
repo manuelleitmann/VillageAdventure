@@ -16,10 +16,45 @@ namespace VillageAdventure
         {
             InitializeComponent();
             this.KeyPreview = true;
+
+            #region Transparent
+            pbx_backgroundCarGame.Controls.Add(pbx_street);
+            pbx_street.BackColor = Color.Transparent;
+
+            pbx_backgroundCarGame.Controls.Add(pbx_changeDirection);
+            pbx_changeDirection.BackColor = Color.Transparent;
+
+            pbx_backgroundCarGame.Controls.Add(pbx_changeDirectionLeft);
+            pbx_changeDirectionLeft.BackColor = Color.Transparent;
+
+            pbx_backgroundCarGame.Controls.Add(pbx_finishLine);
+            pbx_finishLine.BackColor = Color.Transparent;
+            #endregion
         }
 
         private void RaceGame_KeyDown(object sender, KeyEventArgs e)
         {
+            if (pbx_car.Bounds.IntersectsWith(pbx_house.Bounds))
+            {
+                pbx_house.Location = new Point(800, 800);
+
+                DialogResult checkRaceAgain = MessageBox.Show("You lost! Do you want to play again?", "Race Game", MessageBoxButtons.YesNo);
+                if (checkRaceAgain == DialogResult.Yes)
+                {
+                    RaceGame raceAgain = new RaceGame();
+                    this.Hide();
+                    raceAgain.ShowDialog();
+                    this.Close();
+                }
+                else if (checkRaceAgain == DialogResult.No)
+                {
+                    frm_main openMainFromRace = new frm_main();
+                    this.Hide();
+                    openMainFromRace.ShowDialog();
+                    this.Close();
+                }
+            }
+
             CharacterMovement giveDirections = new CharacterMovement();
             giveDirections.x = pbx_car.Location.X;
             giveDirections.y = pbx_car.Location.Y;
@@ -84,6 +119,11 @@ namespace VillageAdventure
 
             pbx_enemy.Top += y;
             pbx_enemy.Left += x;
+        }
+
+        private void RaceGame_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -49,11 +49,11 @@
     <Compile Include="CharacterMovement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -69,8 +69,8 @@
     <Compile Include="RaceGame.Designer.cs">
       <DependentUpon>RaceGame.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -133,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menuButtonHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Street.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundCarGame.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

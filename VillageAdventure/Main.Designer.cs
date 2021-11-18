@@ -30,6 +30,8 @@ namespace VillageAdventure
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.tmr_main = new System.Windows.Forms.Timer(this.components);
+            this.pbx_menuButton = new System.Windows.Forms.PictureBox();
             this.pbx_logo = new System.Windows.Forms.PictureBox();
             this.pbx_mainCharacter = new System.Windows.Forms.PictureBox();
             this.pbx_tree2 = new System.Windows.Forms.PictureBox();
@@ -47,8 +49,7 @@ namespace VillageAdventure
             this.pbx_fir2 = new System.Windows.Forms.PictureBox();
             this.pbx_bush4 = new System.Windows.Forms.PictureBox();
             this.pbx_background = new System.Windows.Forms.PictureBox();
-            this.tmr_main = new System.Windows.Forms.Timer(this.components);
-            this.pbx_menuButton = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_mainCharacter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_tree2)).BeginInit();
@@ -66,8 +67,25 @@ namespace VillageAdventure
             ((System.ComponentModel.ISupportInitialize)(this.pbx_fir2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_bush4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_background)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_menuButton)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tmr_main
+            // 
+            this.tmr_main.Enabled = true;
+            this.tmr_main.Interval = 5000;
+            this.tmr_main.Tick += new System.EventHandler(this.tmr_main_Tick);
+            // 
+            // pbx_menuButton
+            // 
+            this.pbx_menuButton.Image = global::VillageAdventure.Properties.Resources.menuButton;
+            this.pbx_menuButton.Location = new System.Drawing.Point(12, 47);
+            this.pbx_menuButton.Name = "pbx_menuButton";
+            this.pbx_menuButton.Size = new System.Drawing.Size(65, 39);
+            this.pbx_menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbx_menuButton.TabIndex = 17;
+            this.pbx_menuButton.TabStop = false;
+            this.pbx_menuButton.Click += new System.EventHandler(this.pbx_menuButton_Click);
+            this.pbx_menuButton.MouseHover += new System.EventHandler(this.pbx_menuButton_MouseHover);
             // 
             // pbx_logo
             // 
@@ -240,24 +258,7 @@ namespace VillageAdventure
             this.pbx_background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_background.TabIndex = 0;
             this.pbx_background.TabStop = false;
-            // 
-            // tmr_main
-            // 
-            this.tmr_main.Enabled = true;
-            this.tmr_main.Interval = 5000;
-            this.tmr_main.Tick += new System.EventHandler(this.tmr_main_Tick);
-            // 
-            // pbx_menuButton
-            // 
-            this.pbx_menuButton.Image = global::VillageAdventure.Properties.Resources.menuButton;
-            this.pbx_menuButton.Location = new System.Drawing.Point(12, 47);
-            this.pbx_menuButton.Name = "pbx_menuButton";
-            this.pbx_menuButton.Size = new System.Drawing.Size(65, 39);
-            this.pbx_menuButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbx_menuButton.TabIndex = 17;
-            this.pbx_menuButton.TabStop = false;
-            this.pbx_menuButton.Click += new System.EventHandler(this.pbx_menuButton_Click);
-            this.pbx_menuButton.MouseHover += new System.EventHandler(this.pbx_menuButton_MouseHover);
+            this.pbx_background.Click += new System.EventHandler(this.pbx_background_Click);
             // 
             // frm_main
             // 
@@ -286,6 +287,7 @@ namespace VillageAdventure
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Village Adventure";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_main_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_mainCharacter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_tree2)).EndInit();
@@ -303,7 +305,6 @@ namespace VillageAdventure
             ((System.ComponentModel.ISupportInitialize)(this.pbx_fir2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_bush4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_background)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_menuButton)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -148,5 +148,10 @@ namespace VillageAdventure
             openMenu.ShowDialog();
             this.Close();
         }
+
+        private void pbx_background_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
