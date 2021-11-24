@@ -29,20 +29,20 @@ namespace VillageAdventure
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_menuHeadline = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_menuHeadline
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(209, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Menu";
+            this.lbl_menuHeadline.AutoSize = true;
+            this.lbl_menuHeadline.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_menuHeadline.Location = new System.Drawing.Point(209, 27);
+            this.lbl_menuHeadline.Name = "lbl_menuHeadline";
+            this.lbl_menuHeadline.Size = new System.Drawing.Size(112, 42);
+            this.lbl_menuHeadline.TabIndex = 0;
+            this.lbl_menuHeadline.Text = "Menu";
             // 
             // pictureBox1
             // 
@@ -61,7 +61,7 @@ namespace VillageAdventure
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(370, 450);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_menuHeadline);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
@@ -75,7 +75,7 @@ namespace VillageAdventure
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_menuHeadline;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

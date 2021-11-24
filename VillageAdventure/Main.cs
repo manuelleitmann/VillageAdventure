@@ -120,6 +120,8 @@ namespace VillageAdventure
                     pbx_tent1.Location = new Point(426, 319);
                 }
             }
+
+            CheckBounds();
         }
 
         private void tmr_main_Tick(object sender, EventArgs e)
@@ -149,9 +151,25 @@ namespace VillageAdventure
             this.Close();
         }
 
-        private void pbx_background_Click(object sender, EventArgs e)
+        public void CheckBounds()
         {
+            if (pbx_mainCharacter.Left < 0 || pbx_mainCharacter.Width + pbx_mainCharacter.Left > this.ClientRectangle.Width)
+            {
+                pbx_mainCharacter.Location = new Point(233, 442);
 
+                DialogResult checkBounds = MessageBox.Show("You can't go there!", "Stay in the Village!", MessageBoxButtons.OK);
+            }
+           
+            if (pbx_mainCharacter.Top < 0 || pbx_mainCharacter.Height + pbx_mainCharacter.Top > this.ClientRectangle.Height)
+            {
+                pbx_mainCharacter.Location = new Point(233, 442);
+                DialogResult checkBounds = MessageBox.Show("You can't go there!", "Stay in the Village!", MessageBoxButtons.OK);
+            }
         }
+
+            private void pbx_background_Click(object sender, EventArgs e)
+            {
+
+            }
     }
 }
