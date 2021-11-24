@@ -9,14 +9,15 @@ using System.Windows.Forms;
 
 namespace VillageAdventure
 {
-    class SQLInteraction : frm_login
+    class SQLInteraction
     {
-        //string conStr = "";
+        
         public static SqlConnection con = new SqlConnection();
         static SqlCommand cmd = new SqlCommand();
         private static SqlCommandBuilder cmdbuild = new SqlCommandBuilder();
 
 
+        //Creates Database if not exists
         public static void CreateDatabase(string dbname)
         {
             try
@@ -37,6 +38,7 @@ namespace VillageAdventure
             
         }
         
+        //Creates Table if not exists
         public static void CreateTable(string dbname, string tablename)
         {
             try
@@ -52,6 +54,7 @@ namespace VillageAdventure
             }
         }
 
+        //Login Check for the password
         public static void CheckTable(string tablename, string v_username, string v_password)
         {
             string hashedpw;
@@ -81,10 +84,9 @@ namespace VillageAdventure
             }
         }
 
+        //New Account inserts into the database 
         public static void InsertInto(string tablename, string v_username, string v_password)
         {
-
-             
 
             try
             {

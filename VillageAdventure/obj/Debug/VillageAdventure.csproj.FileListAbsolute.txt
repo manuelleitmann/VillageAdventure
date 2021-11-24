@@ -30,3 +30,4 @@ C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\
 C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.CoreCompileInputs.cache
 C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.exe
 C:\Users\Alex\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.pdb
+C:\Users\alexander.promebner\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.frm_doodlejump.resources

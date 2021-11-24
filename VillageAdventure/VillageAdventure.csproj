@@ -62,6 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BCrypt.cs" />
+    <Compile Include="CharacterMovement.cs" />
+    <Compile Include="DoodleJump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoodleJump.Designer.cs">
+      <DependentUpon>DoodleJump.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +86,9 @@
     <Compile Include="SQLInteraction.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="DoodleJump.resx">
+      <DependentUpon>DoodleJump.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

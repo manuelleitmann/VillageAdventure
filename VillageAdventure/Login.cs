@@ -59,9 +59,6 @@ namespace VillageAdventure
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            
-
-
             SQLInteraction.CheckTable("Login", txt_username.Text, txt_password.Text);
         }
     }
