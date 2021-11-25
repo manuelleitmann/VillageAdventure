@@ -72,8 +72,27 @@ namespace VillageAdventure
             }
             else if (e.KeyCode == Keys.A)
             {
-                giveDirections.MoveLeft();
-                pbx_car.Location = new Point(giveDirections.x, giveDirections.y);
+                if (pbx_car.Bounds.IntersectsWith(pbx_finishLine.Bounds))
+                {
+                    pbx_finishLine.Location = new Point(800, 800);
+                    pbx_enemy.Location = new Point(800, 800);
+
+                    DialogResult checkRaceAgain = MessageBox.Show("You lost! Do you want to play again?", "Race Game", MessageBoxButtons.YesNo);
+                    if (checkRaceAgain == DialogResult.Yes)
+                    {
+                        RaceGame raceAgain = new RaceGame();
+                        this.Hide();
+                        raceAgain.ShowDialog();
+                        this.Close();
+                    }
+                    else if (checkRaceAgain == DialogResult.No)
+                    {
+                        frm_main openMainFromRace = new frm_main();
+                        this.Hide();
+                        openMainFromRace.ShowDialog();
+                        this.Close();
+                    }
+                }
             }
             else if (e.KeyCode == Keys.D)
             {
