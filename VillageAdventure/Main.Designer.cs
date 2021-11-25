@@ -286,6 +286,7 @@ namespace VillageAdventure
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Village Adventure";
+            this.Load += new System.EventHandler(this.frm_main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_main_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).EndInit();

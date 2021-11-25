@@ -72,6 +72,9 @@ namespace VillageAdventure
             }
             else if (e.KeyCode == Keys.A)
             {
+                giveDirections.MoveLeft();
+                pbx_car.Location = new Point(giveDirections.x, giveDirections.y);
+
                 if (pbx_car.Bounds.IntersectsWith(pbx_finishLine.Bounds))
                 {
                     pbx_finishLine.Location = new Point(800, 800);
@@ -99,7 +102,15 @@ namespace VillageAdventure
                 giveDirections.MoveRight();
                 pbx_car.Location = new Point(giveDirections.x, giveDirections.y);
             }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                Menu openMenu = new Menu();
+                this.Hide();
+                openMenu.ShowDialog();
+                this.Close();
+            }
         }
+        
         //remove multiple timers --> try to make with one timer
         private void tmr_raceGame_Tick(object sender, EventArgs e)
         {
@@ -111,8 +122,11 @@ namespace VillageAdventure
             {
                 tmr_down.Enabled = true;
                 tmr_raceGame.Enabled = false;
+
+                pbx_enemy.Height = 72;
+                pbx_enemy.Width = 44;
             }
-           
+
             pbx_enemy.Top += y;
             pbx_enemy.Left += x;
 
@@ -173,6 +187,27 @@ namespace VillageAdventure
             }
             #endregion
 
+            if (pbx_enemy.Bounds.IntersectsWith(pbx_finishLine.Bounds))
+            {
+                pbx_finishLine.Location = new Point(800, 800);
+
+                DialogResult checkRaceAgain = MessageBox.Show("You lost! Do you want to play again?", "Race Game", MessageBoxButtons.YesNo);
+                if (checkRaceAgain == DialogResult.Yes)
+                {
+                    RaceGame raceAgain = new RaceGame();
+                    this.Hide();
+                    raceAgain.ShowDialog();
+                    this.Close();
+                }
+                else if (checkRaceAgain == DialogResult.No)
+                {
+                    frm_main openMainFromRace = new frm_main();
+                    this.Hide();
+                    openMainFromRace.ShowDialog();
+                    this.Close();
+                }
+            }
+
             CheckBounds();
         }
 
@@ -185,6 +220,9 @@ namespace VillageAdventure
             {
                 tmr_down.Enabled = false;
                 tmr_left.Enabled = true;
+
+                pbx_enemy.Height = 44;
+                pbx_enemy.Width = 72;
             }
 
             pbx_enemy.Top += y;

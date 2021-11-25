@@ -101,8 +101,15 @@ namespace VillageAdventure
                 giveDirections.MoveRight();
                 pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
             }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                Menu openMenu = new Menu();
+                this.Hide();
+                openMenu.ShowDialog();
+                this.Close();
+            }
             #endregion
-           
+
             if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent1.Bounds))
             {
                 pbx_tent1.Location = new Point(800, 800);
@@ -171,5 +178,10 @@ namespace VillageAdventure
             {
 
             }
+
+        private void frm_main_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
