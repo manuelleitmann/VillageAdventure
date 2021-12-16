@@ -64,16 +64,22 @@ namespace VillageAdventure
                 giveDirections.MoveUp();
                 //to refresh the location of the picture box
                 pbx_car.Location = new Point(giveDirections.x, giveDirections.y);
+                pbx_car.Height = 72;
+                pbx_car.Width = 44;
             }
             else if (e.KeyCode == Keys.S)
             {
                 giveDirections.MoveDown();
                 pbx_car.Location = new Point(giveDirections.x, giveDirections.y);
+                pbx_car.Height = 72;
+                pbx_car.Width = 44;
             }
             else if (e.KeyCode == Keys.A)
             {
                 giveDirections.MoveLeft();
                 pbx_car.Location = new Point(giveDirections.x, giveDirections.y);
+                pbx_car.Height = 44;
+                pbx_car.Width = 72;
 
                 if (pbx_car.Bounds.IntersectsWith(pbx_finishLine.Bounds))
                 {
@@ -101,6 +107,8 @@ namespace VillageAdventure
             {
                 giveDirections.MoveRight();
                 pbx_car.Location = new Point(giveDirections.x, giveDirections.y);
+                pbx_car.Height = 44;
+                pbx_car.Width = 72;
             }
             else if (e.KeyCode == Keys.Escape)
             {

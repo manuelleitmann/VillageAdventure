@@ -67,7 +67,7 @@ namespace VillageAdventure
             // pbx_enemy
             // 
             this.pbx_enemy.BackColor = System.Drawing.Color.Red;
-            this.pbx_enemy.Location = new System.Drawing.Point(34, 88);
+            this.pbx_enemy.Location = new System.Drawing.Point(34, 87);
             this.pbx_enemy.Name = "pbx_enemy";
             this.pbx_enemy.Size = new System.Drawing.Size(72, 44);
             this.pbx_enemy.TabIndex = 6;
@@ -85,9 +85,9 @@ namespace VillageAdventure
             // pbx_street
             // 
             this.pbx_street.Image = global::VillageAdventure.Properties.Resources.Street;
-            this.pbx_street.Location = new System.Drawing.Point(-1, -2);
+            this.pbx_street.Location = new System.Drawing.Point(-7, -1);
             this.pbx_street.Name = "pbx_street";
-            this.pbx_street.Size = new System.Drawing.Size(638, 635);
+            this.pbx_street.Size = new System.Drawing.Size(638, 628);
             this.pbx_street.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_street.TabIndex = 8;
             this.pbx_street.TabStop = false;
@@ -95,25 +95,25 @@ namespace VillageAdventure
             // pbx_changeDirectionLeft
             // 
             this.pbx_changeDirectionLeft.BackColor = System.Drawing.Color.Transparent;
-            this.pbx_changeDirectionLeft.Location = new System.Drawing.Point(477, 582);
+            this.pbx_changeDirectionLeft.Location = new System.Drawing.Point(477, 610);
             this.pbx_changeDirectionLeft.Name = "pbx_changeDirectionLeft";
-            this.pbx_changeDirectionLeft.Size = new System.Drawing.Size(142, 37);
+            this.pbx_changeDirectionLeft.Size = new System.Drawing.Size(142, 30);
             this.pbx_changeDirectionLeft.TabIndex = 7;
             this.pbx_changeDirectionLeft.TabStop = false;
             // 
             // pbx_changeDirection
             // 
             this.pbx_changeDirection.BackColor = System.Drawing.Color.Transparent;
-            this.pbx_changeDirection.Location = new System.Drawing.Point(598, 16);
+            this.pbx_changeDirection.Location = new System.Drawing.Point(607, 12);
             this.pbx_changeDirection.Name = "pbx_changeDirection";
-            this.pbx_changeDirection.Size = new System.Drawing.Size(53, 131);
+            this.pbx_changeDirection.Size = new System.Drawing.Size(53, 124);
             this.pbx_changeDirection.TabIndex = 5;
             this.pbx_changeDirection.TabStop = false;
             // 
             // pbx_finishLine
             // 
             this.pbx_finishLine.BackColor = System.Drawing.Color.Transparent;
-            this.pbx_finishLine.Location = new System.Drawing.Point(-1, 497);
+            this.pbx_finishLine.Location = new System.Drawing.Point(-7, 497);
             this.pbx_finishLine.Name = "pbx_finishLine";
             this.pbx_finishLine.Size = new System.Drawing.Size(63, 125);
             this.pbx_finishLine.TabIndex = 3;
@@ -122,9 +122,9 @@ namespace VillageAdventure
             // pbx_backgroundCarGame
             // 
             this.pbx_backgroundCarGame.Image = global::VillageAdventure.Properties.Resources.BackgroundCarGame;
-            this.pbx_backgroundCarGame.Location = new System.Drawing.Point(-1, -2);
+            this.pbx_backgroundCarGame.Location = new System.Drawing.Point(-10, -6);
             this.pbx_backgroundCarGame.Name = "pbx_backgroundCarGame";
-            this.pbx_backgroundCarGame.Size = new System.Drawing.Size(638, 635);
+            this.pbx_backgroundCarGame.Size = new System.Drawing.Size(638, 628);
             this.pbx_backgroundCarGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_backgroundCarGame.TabIndex = 9;
             this.pbx_backgroundCarGame.TabStop = false;
@@ -132,9 +132,9 @@ namespace VillageAdventure
             // pbx_house
             // 
             this.pbx_house.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pbx_house.Location = new System.Drawing.Point(6, 146);
+            this.pbx_house.Location = new System.Drawing.Point(2, 141);
             this.pbx_house.Name = "pbx_house";
-            this.pbx_house.Size = new System.Drawing.Size(481, 342);
+            this.pbx_house.Size = new System.Drawing.Size(466, 335);
             this.pbx_house.TabIndex = 10;
             this.pbx_house.TabStop = false;
             // 
@@ -142,7 +142,7 @@ namespace VillageAdventure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 630);
+            this.ClientSize = new System.Drawing.Size(618, 620);
             this.Controls.Add(this.pbx_house);
             this.Controls.Add(this.pbx_enemy);
             this.Controls.Add(this.pbx_car);

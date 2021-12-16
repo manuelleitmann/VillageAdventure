@@ -181,7 +181,7 @@ namespace VillageAdventure
 
         private void frm_main_Load(object sender, EventArgs e)
         {
-
+            pbx_mainCharacter.BringToFront();
         }
     }
 }

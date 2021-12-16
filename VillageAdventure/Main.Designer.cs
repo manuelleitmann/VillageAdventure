@@ -101,7 +101,7 @@ namespace VillageAdventure
             // 
             this.pbx_mainCharacter.BackColor = System.Drawing.Color.Transparent;
             this.pbx_mainCharacter.Image = global::VillageAdventure.Properties.Resources.Player;
-            this.pbx_mainCharacter.Location = new System.Drawing.Point(233, 442);
+            this.pbx_mainCharacter.Location = new System.Drawing.Point(241, 442);
             this.pbx_mainCharacter.Name = "pbx_mainCharacter";
             this.pbx_mainCharacter.Size = new System.Drawing.Size(48, 81);
             this.pbx_mainCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
