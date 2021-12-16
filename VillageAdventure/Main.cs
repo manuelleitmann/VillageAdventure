@@ -127,6 +127,23 @@ namespace VillageAdventure
                     pbx_tent1.Location = new Point(426, 319);
                 }
             }
+            if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent2.Bounds))
+            {
+                pbx_tent2.Location = new Point(800, 800);
+
+                DialogResult dialogResult = MessageBox.Show("Do you want to play PacMan?", "PacMan", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    PacMan openPacMan = new PacMan();
+                    this.Hide();
+                    openPacMan.ShowDialog();
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    pbx_tent2.Location = new Point(33, 352);
+                }
+            }
 
             CheckBounds();
         }

@@ -10,3 +10,4 @@ C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdv
 C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.frm_main.resources
 C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.RaceGame.resources
 C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.Menu.resources
+C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.PacMan.resources
