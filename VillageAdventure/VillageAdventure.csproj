@@ -136,5 +136,8 @@
   <ItemGroup>
     <None Include="Resources\DoodleJumpPlatform.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DoodleJumpPlatformtransparent.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

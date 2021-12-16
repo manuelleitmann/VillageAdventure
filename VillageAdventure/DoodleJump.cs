@@ -73,15 +73,30 @@ namespace VillageAdventure
             
         }
 
-        public void Gravity()
+        public void GravityDown()
         {
             pbx_y += gravity;
             pbx_character.Location = new Point(pbx_character.Location.X, pbx_y);
         }
 
+        public void GravityUp()
+        {
+            pbx_y -= 50;
+            pbx_character.Location = new Point(pbx_character.Location.X, pbx_y);
+        }
+
         private void tmr_gravity_Tick(object sender, EventArgs e)
         {
-            Gravity();
+            //GravityDown();
+
+            if(pbx_character.Bounds.IntersectsWith(pbx_platform.Bounds))
+            {
+                GravityUp();
+            }
+            else
+            {
+                GravityDown();
+            }
 
             CheckBounds();
         }

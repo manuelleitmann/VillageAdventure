@@ -63,9 +63,9 @@ namespace VillageAdventure.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DoodleJumpPlatform {
+        internal static System.Drawing.Bitmap DoodleJumpPlatformtransparent {
             get {
-                object obj = ResourceManager.GetObject("DoodleJumpPlatform", resourceCulture);
+                object obj = ResourceManager.GetObject("DoodleJumpPlatformtransparent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
