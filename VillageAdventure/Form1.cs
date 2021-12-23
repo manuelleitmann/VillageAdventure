@@ -105,31 +105,30 @@ namespace VillageAdventure
             foreach (PictureBox p in list)
             {
                 //top of the platform
-                if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Right > p.Left && pbx_player.Left + pbx_player.Width < p.Right && pbx_player.Top < p.Top)
-                {
-                    pbx_player.Top = p.Top + pbx_player.Height;
-                    playerOnFloor = true;
-                    jump = false;
-                }
-                //left side of platform
-                else if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top > p.Top - pbx_player.Height + 2 && pbx_player.Top < p.Bottom && p.Right - 10 > pbx_player.Left)
-                {
-                    pbx_player.Left = p.Left - pbx_player.Width;
-                    right = false;
-                }
-                //right side of platform
-                else if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top > p.Top - pbx_player.Height +2 && pbx_player.Top < p.Bottom && p.Left+10 > pbx_player.Right)
-                {
-                    pbx_player.Left = p.Right;
-                    left = false;
-                }
-                
                 //if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Right > p.Left && pbx_player.Left + pbx_player.Width < p.Right && pbx_player.Top < p.Top)
                 //{
-                //    p.Top = pbx_player.Top - pbx_player.Height;
+                //    pbx_player.Top = p.Top + pbx_player.Height;
                 //    playerOnFloor = true;
                 //    jump = false;
                 //}
+                ////left side of platform
+                //if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top > p.Top - pbx_player.Height + 2 && pbx_player.Top < p.Bottom && p.Right - 10 > pbx_player.Left)
+                //{
+                //    pbx_player.Left = p.Left - pbx_player.Width;
+                //    right = false;
+                //}
+                ////right side of platform
+                //if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top > p.Top - pbx_player.Height +2 && pbx_player.Top < p.Bottom && p.Left+10 > pbx_player.Right)
+                //{
+                //    pbx_player.Left = p.Right;
+                //    left = false;
+                //}
+                //bottom of the platform
+                if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top + pbx_player.Height >= p.Top)
+                {
+                    pbx_player.Top = p.Top - pbx_player.Height;
+                }
+                
                 if(jump == false)
                 {
                     pbx_player.Top += 1;
