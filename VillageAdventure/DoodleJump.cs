@@ -71,22 +71,26 @@ namespace VillageAdventure
         {
             pbx_character.Location = new Point(136, 380);
 
-            PictureBox pbx_test = new PictureBox();
+            MakePlatform();
+        }
+
+        PictureBox pbx_test = new PictureBox();
+
+        private void MakePlatform()
+        {            
             pbx_test.Height = 30;
             pbx_test.Width = 55;
             pbx_test.SizeMode = PictureBoxSizeMode.Zoom;
             pbx_test.Image = Properties.Resources.DoodleJumpPlatformtransparent;
 
-            int x = rand.Next(10, this.ClientSize.Width - pbx_test.Width);
-            int y = rand.Next(10, this.ClientSize.Height - pbx_test.Height);
+            int x = rand.Next(0, 275);
+            int y = rand.Next(10, 350);
 
             pbx_test.Location = new Point(x, y);
 
             items.Add(pbx_test);
             this.Controls.Add(pbx_test);
         }
-
-       
 
         private void pbx_platform_Click(object sender, EventArgs e)
         {
@@ -96,26 +100,20 @@ namespace VillageAdventure
         public void GravityDown()
         {
             pbx_y += gravity;
-            pbx_character.Location = new Point(pbx_character.Location.X, pbx_y);
-
-            
+            pbx_character.Location = new Point(pbx_character.Location.X, pbx_y); 
         }
 
-        public void GravityUp()
-        {
-            //pbx_y -= gravity;
-            //pbx_character.
-        }
+        
 
         private void tmr_gravity_Tick(object sender, EventArgs e)
         {
             GravityDown();
 
-            //if(pbx_character.Bounds.IntersectsWith(pbx_platform.Bounds))
-            //{
-                 
-            //}
-       
+            if(pbx_character.Bounds.IntersectsWith(pbx_test.Bounds))
+            {
+                pbx_test.Location = new Point(800, 800);
+                pbx_character.
+            }       
 
             CheckBounds();
         }
