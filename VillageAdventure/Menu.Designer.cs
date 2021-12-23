@@ -62,6 +62,9 @@ namespace VillageAdventure
             this.ClientSize = new System.Drawing.Size(370, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_menuHeadline);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(386, 489);
+            this.MinimumSize = new System.Drawing.Size(386, 489);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

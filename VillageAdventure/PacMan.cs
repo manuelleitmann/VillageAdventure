@@ -13,6 +13,9 @@ namespace VillageAdventure
     public partial class PacMan : Form
     {
         public bool checkLeft = false;
+        public bool checkRight = false;
+        public bool checkUp = false;
+        public bool checkDown = false;
         CharacterMovement movePacMan = new CharacterMovement();
 
         public PacMan()
@@ -27,11 +30,9 @@ namespace VillageAdventure
         }
 
         private void PacMan_KeyDown(object sender, KeyEventArgs e)
-        {
-            
+        {          
             movePacMan.x = pbx_pacMan.Location.X;
             movePacMan.y = pbx_pacMan.Location.Y;
-
 
             if (e.KeyCode == Keys.W && checkLeft == true)
             {
@@ -39,18 +40,15 @@ namespace VillageAdventure
             }
             else if (e.KeyCode == Keys.S)
             {
-                //movePacMan.MoveDown();
-                pbx_pacMan.Location = new Point(movePacMan.x, movePacMan.y);
-
+                
             }
             else if (e.KeyCode == Keys.A && checkLeft == false)
             {
                 tmr_PacManLeft.Enabled = true;
             }
-            else if (e.KeyCode == Keys.D)
+            else if (e.KeyCode == Keys.D && checkLeft == true || e.KeyCode == Keys.D && checkUp == true)
             {
-                //movePacMan.MoveRight();
-                //pbx_pacMan.Location = new Point(movePacMan.x, movePacMan.y);
+                tmr_PacManRight.Enabled = true;
             }
             else if (e.KeyCode == Keys.Escape)
             {
@@ -92,7 +90,22 @@ namespace VillageAdventure
             if (pbx_pacMan.Bounds.IntersectsWith(pbx_wall4.Bounds))
             {
                 tmr_PacManLeft.Enabled = false;
-                checkLeft = true;
+                checkUp = true;
+            }
+        }
+
+        private void tmr_PacManRight_Tick(object sender, EventArgs e)
+        {
+            movePacMan.x = pbx_pacMan.Location.X;
+            movePacMan.y = pbx_pacMan.Location.Y;
+
+            movePacMan.MoveRight();
+            pbx_pacMan.Location = new Point(movePacMan.x, movePacMan.y);
+
+            if (pbx_pacMan.Bounds.IntersectsWith(pbx_wall4.Bounds))
+            {
+                tmr_PacManLeft.Enabled = false;
+                checkRight = true;
             }
         }
     }

@@ -283,6 +283,9 @@ namespace VillageAdventure
             this.Controls.Add(this.pbx_fir2);
             this.Controls.Add(this.pbx_bush4);
             this.Controls.Add(this.pbx_background);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(567, 654);
+            this.MinimumSize = new System.Drawing.Size(567, 654);
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Village Adventure";

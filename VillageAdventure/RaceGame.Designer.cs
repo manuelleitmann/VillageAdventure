@@ -151,6 +151,9 @@ namespace VillageAdventure
             this.Controls.Add(this.pbx_changeDirection);
             this.Controls.Add(this.pbx_finishLine);
             this.Controls.Add(this.pbx_backgroundCarGame);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(634, 659);
+            this.MinimumSize = new System.Drawing.Size(634, 659);
             this.Name = "RaceGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaceGame";

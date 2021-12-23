@@ -44,6 +44,7 @@ namespace VillageAdventure
             this.pbx_wall4 = new System.Windows.Forms.PictureBox();
             this.tmr_PacManLeft = new System.Windows.Forms.Timer(this.components);
             this.tmr_PacManUp = new System.Windows.Forms.Timer(this.components);
+            this.tmr_PacManRight = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_pacMan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_prison1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_prison3)).BeginInit();
@@ -174,6 +175,10 @@ namespace VillageAdventure
             // 
             this.tmr_PacManUp.Tick += new System.EventHandler(this.tmr_PacManUp_Tick);
             // 
+            // tmr_PacManRight
+            // 
+            this.tmr_PacManRight.Tick += new System.EventHandler(this.tmr_PacManRight_Tick);
+            // 
             // PacMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +197,7 @@ namespace VillageAdventure
             this.Controls.Add(this.pbx_prison3);
             this.Controls.Add(this.pbx_prison1);
             this.Controls.Add(this.pbx_pacMan);
+            this.HelpButton = true;
             this.Name = "PacMan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PacMan";
@@ -229,5 +235,6 @@ namespace VillageAdventure
         private System.Windows.Forms.PictureBox pbx_wall4;
         private System.Windows.Forms.Timer tmr_PacManLeft;
         private System.Windows.Forms.Timer tmr_PacManUp;
+        private System.Windows.Forms.Timer tmr_PacManRight;
     }
 }
