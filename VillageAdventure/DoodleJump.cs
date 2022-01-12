@@ -14,6 +14,7 @@ namespace VillageAdventure
     {
         int gravity = 1;
         
+        
         int pbx_x, pbx_y, pbx_w, pbx_h;
         Random rand = new Random();
         List<PictureBox> items = new List<PictureBox>();
@@ -51,25 +52,29 @@ namespace VillageAdventure
 
         public void CheckBounds()
         {
-            //int x = pbx_character.Location.X;
-            //int y = pbx_character.Location.Y;
+            if (pbx_character.Width + pbx_character.Left > this.ClientRectangle.Width)
+            {
+                pbx_character.Location = new Point(1, pbx_character.Location.Y);
+            }
+            if (pbx_character.Left + pbx_character.Width < 1)
+            {
+                pbx_character.Location = new Point(400, pbx_character.Location.Y);
+            }
 
-            //int width = this.ClientRectangle.Width;
-            //width = 350;
 
-            //if (pbx_character.Right > 0 || pbx_character.Width + pbx_character.Right > width)
-            //{
-            //    pbx_character.Location = new Point(this.ClientRectangle.Right, y);   
-            //}
-            //else if (pbx_character.Left > 350 || pbx_character.Width + pbx_character.Right > width)
-            //{
-            //    pbx_character.Location = new Point(this.ClientRectangle.Left, y);
-            //}
+            //try check with picture box
+            if (pbx_character.Top < 0 || pbx_character.Height + pbx_character.Top > this.ClientRectangle.Height)
+            {
+                MessageBox.Show("You Lost!");
+
+                gravity = 0;
+                pbx_character.Location = new Point(1, 231);
+            }
         }
 
         private void frm_doodlejump_Load(object sender, EventArgs e)
         {
-            pbx_character.Location = new Point(136, 380);
+            pbx_character.Location = new Point(136, 100);
 
             MakePlatform();
         }
@@ -92,6 +97,16 @@ namespace VillageAdventure
             this.Controls.Add(pbx_test);
         }
 
+        private void tmr_falldown_Tick(object sender, EventArgs e)
+        {
+            GravityDown();
+        }
+
+        private void tmr_checkbounds_Tick(object sender, EventArgs e)
+        {
+            CheckBounds();
+        }
+
         private void pbx_platform_Click(object sender, EventArgs e)
         {
 
@@ -107,15 +122,10 @@ namespace VillageAdventure
 
         private void tmr_gravity_Tick(object sender, EventArgs e)
         {
-            GravityDown();
-
-            if(pbx_character.Bounds.IntersectsWith(pbx_test.Bounds))
+            if (pbx_character.Bounds.IntersectsWith(pbx_test.Bounds))
             {
-                pbx_test.Location = new Point(800, 800);
-                pbx_character.
-            }       
-
-            CheckBounds();
+                gravity = -1;
+            } 
         }
     }
 }

@@ -32,6 +32,8 @@ namespace VillageAdventure
             this.components = new System.ComponentModel.Container();
             this.tmr_gravity = new System.Windows.Forms.Timer(this.components);
             this.pbx_character = new System.Windows.Forms.PictureBox();
+            this.tmr_falldown = new System.Windows.Forms.Timer(this.components);
+            this.tmr_checkbounds = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_character)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +52,18 @@ namespace VillageAdventure
             this.pbx_character.TabIndex = 0;
             this.pbx_character.TabStop = false;
             this.pbx_character.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // tmr_falldown
+            // 
+            this.tmr_falldown.Enabled = true;
+            this.tmr_falldown.Interval = 1;
+            this.tmr_falldown.Tick += new System.EventHandler(this.tmr_falldown_Tick);
+            // 
+            // tmr_checkbounds
+            // 
+            this.tmr_checkbounds.Enabled = true;
+            this.tmr_checkbounds.Interval = 1;
+            this.tmr_checkbounds.Tick += new System.EventHandler(this.tmr_checkbounds_Tick);
             // 
             // frm_doodlejump
             // 
@@ -72,5 +86,7 @@ namespace VillageAdventure
 
         private System.Windows.Forms.PictureBox pbx_character;
         private System.Windows.Forms.Timer tmr_gravity;
+        private System.Windows.Forms.Timer tmr_falldown;
+        private System.Windows.Forms.Timer tmr_checkbounds;
     }
 }
