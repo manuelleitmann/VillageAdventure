@@ -50,12 +50,13 @@ namespace VillageAdventure
             // pbx_player
             // 
             this.pbx_player.Image = global::VillageAdventure.Properties.Resources.PlayerFront;
-            this.pbx_player.Location = new System.Drawing.Point(302, 213);
+            this.pbx_player.Location = new System.Drawing.Point(430, 427);
             this.pbx_player.Name = "pbx_player";
             this.pbx_player.Size = new System.Drawing.Size(67, 123);
             this.pbx_player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_player.TabIndex = 2;
             this.pbx_player.TabStop = false;
+            this.pbx_player.Tag = "player";
             // 
             // pbx_platform
             // 
@@ -65,15 +66,17 @@ namespace VillageAdventure
             this.pbx_platform.Size = new System.Drawing.Size(355, 19);
             this.pbx_platform.TabIndex = 1;
             this.pbx_platform.TabStop = false;
+            this.pbx_platform.Tag = "platform";
             // 
             // pbx_platform2
             // 
             this.pbx_platform2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pbx_platform2.Location = new System.Drawing.Point(415, 476);
+            this.pbx_platform2.Location = new System.Drawing.Point(391, 411);
             this.pbx_platform2.Name = "pbx_platform2";
             this.pbx_platform2.Size = new System.Drawing.Size(139, 19);
             this.pbx_platform2.TabIndex = 3;
             this.pbx_platform2.TabStop = false;
+            this.pbx_platform2.Tag = "platform";
             // 
             // lbl_restart
             // 
