@@ -200,5 +200,10 @@ namespace VillageAdventure
         {
             pbx_mainCharacter.BringToFront();
         }
+
+        private void pbx_logo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

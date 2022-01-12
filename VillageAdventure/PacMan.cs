@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace VillageAdventure
 {
+    //check if a wall is in Pac-Mans way if he wants to move in a direction!
     public partial class PacMan : Form
     {
+        //directions to check in which direction Pac-Man is moving
         public bool checkLeft = false;
         public bool checkRight = false;
         public bool checkUp = false;
@@ -30,10 +32,12 @@ namespace VillageAdventure
         }
 
         private void PacMan_KeyDown(object sender, KeyEventArgs e)
-        {          
+        {         
+            //Movement
             movePacMan.x = pbx_pacMan.Location.X;
             movePacMan.y = pbx_pacMan.Location.Y;
 
+            //check which direction Pac-Man is moving
             if (e.KeyCode == Keys.W && checkLeft == true)
             {
                 tmr_PacManUp.Enabled = true;
@@ -59,6 +63,7 @@ namespace VillageAdventure
             }
         }
 
+        //to move Pac-Man automatically in a direction
         private void tmr_PacManLeft_Tick(object sender, EventArgs e)
         {
             movePacMan.x = pbx_pacMan.Location.X;
@@ -91,6 +96,7 @@ namespace VillageAdventure
             {
                 tmr_PacManLeft.Enabled = false;
                 checkUp = true;
+                checkLeft = false;
             }
         }
 
