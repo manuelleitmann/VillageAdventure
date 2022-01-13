@@ -44,7 +44,7 @@ namespace VillageAdventure
             }
             else if (e.KeyCode == Keys.S)
             {
-                
+                tmr_PacManDown.Enabled = true;
             }
             else if (e.KeyCode == Keys.A && checkLeft == false)
             {
@@ -113,6 +113,15 @@ namespace VillageAdventure
                 tmr_PacManLeft.Enabled = false;
                 checkRight = true;
             }
+        }
+
+        private void tmr_PacManDown_Tick(object sender, EventArgs e)
+        {
+            movePacMan.x = pbx_pacMan.Location.X;
+            movePacMan.y = pbx_pacMan.Location.Y;
+
+            movePacMan.MoveDown();
+            pbx_pacMan.Location = new Point(movePacMan.x, movePacMan.y);
         }
     }
 }
