@@ -16,9 +16,9 @@ namespace VillageAdventure
         private bool left = false;
         private bool right = false;
         private bool jump = false;
-        private int gravity = 35;
+        private int gravity = 25;
         private int force = 0;
-        private int speed = 10;
+        private int speed = 5;
         private bool playerOnFloor;
         #endregion
         #region Lists
@@ -88,14 +88,11 @@ namespace VillageAdventure
             {
                 pbx_player.Left += speed;
             }
-            //if(pbx_player.Top + pbx_player.Height == 0)
-            //{
-                if (jump == true)//jump
-                {
-                    pbx_player.Top -= force;
-                    force -= 2;
-                }
-            //}         
+            if (jump == true)//jump
+            {
+                pbx_player.Top -= force;
+                force -= 2;
+            }      
             if (pbx_player.Top + pbx_player.Height >= ClientSize.Height)
             {
                 pbx_player.Top = ClientSize.Height - pbx_player.Height;
@@ -106,28 +103,44 @@ namespace VillageAdventure
             }
 
             #endregion
-            //playerOnFloor = false;
+            
             #region ColissionDetection
             foreach (PictureBox p in list)
             {
                 //top
-                if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top + pbx_player.Height >= p.Top)
+                if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top + pbx_player.Height >= p.Top && pbx_player.Left >= p.Left && pbx_player.Left + pbx_player.Width <= p.Left + p.Width)
                 {
                     //MessageBox.Show("aha", "Interesting", MessageBoxButtons.OK);
                     pbx_player.Top = p.Top - pbx_player.Height;
                 }
                 //down side of platform
-                else dif (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top <= p.Top + p.Height)
+                //if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top <= p.Top + p.Height && pbx_player.Left >= p.Left && pbx_player.Left + pbx_player.Width <= p.Left + p.Width)
+                //{
+                //    //MessageBox.Show("aha", "Interesting", MessageBoxButtons.OK);
+                //    //pbx_player.Top = p.Top + p.Height;
+                //    jump = false;
+                //    gravity = 0;
+                //}
+
+                //left side of the platform
+                if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Left + pbx_player.Width >= p.Left && pbx_player.Left <= p.Left + p.Width)
                 {
-                    MessageBox.Show("aha", "Interesting", MessageBoxButtons.OK);
-                    pbx_player.Top = p.Top + p.Height;
+                    //pbx_player.Left = p.Left - pbx_player.Width;
+                    right = false;
+                }
+                //right side of the platform
+                if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Left <= p.Left + p.Width/* && pbx_player.Left >= p.Left + p.Width - 1*/)
+                {
+                    //pbx_player.Left = p.Left + p.Width;
+                    left = false;
                 }
 
                 if (jump == false)
                 {
                     pbx_player.Top += 1;
                 }
-                if(jump && pbx_player.Bounds.IntersectsWith(p.Bounds) && force >= 0)
+
+                if (jump && pbx_player.Bounds.IntersectsWith(p.Bounds) && force >= 0)
                 {
                     force = 0;
                 }
