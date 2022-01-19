@@ -18,8 +18,9 @@ namespace VillageAdventure
         private bool jump = false;
         private int gravity = 25;
         private int force = 0;
-        private int speed = 5;
+        private int speed = 10;
         private bool playerOnFloor;
+        
         #endregion
         #region Lists
         List<PictureBox> list = new List<PictureBox>();
@@ -69,10 +70,24 @@ namespace VillageAdventure
         {
             pbx_player.Location = new Point(0, ClientSize.Height - pbx_player.Height - pbx_platform.Height);
             this.DoubleBuffered = true;//makes the movement of the player smoother
+            
+            #region random Platforms
+            Random rnd = new Random();
+            int platformPositionWidth = rnd.Next(0, 1092);
+            int platformPositionHeight = rnd.Next(0,591);
+            PictureBox pbx_randomPlatform = new PictureBox();
+            pbx_randomPlatform.BackColor = Color.Black;
+            pbx_randomPlatform.Size = new Size(50, 20);
+            pbx_randomPlatform.Location = new Point(platformPositionWidth, platformPositionHeight);
+            pbx_randomPlatform.Tag = "platform";
+            pbx_randomPlatform.Visible = true;
+            Controls.Add(pbx_randomPlatform);
+            #endregion
             #region List
 
             list.Add(pbx_platform);
             list.Add(pbx_platform2);
+            list.Add(pbx_randomPlatform);
 
             #endregion
         }
