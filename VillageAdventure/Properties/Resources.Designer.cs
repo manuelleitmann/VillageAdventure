@@ -93,6 +93,16 @@ namespace VillageAdventure.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DoodleJumpPlatformtransparent {
+            get {
+                object obj = ResourceManager.GetObject("DoodleJumpPlatformtransparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FireGIF {
             get {
                 object obj = ResourceManager.GetObject("FireGIF", resourceCulture);

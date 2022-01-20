@@ -11,3 +11,17 @@ C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdv
 C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.RaceGame.resources
 C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.Menu.resources
 C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.PacMan.resources
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\bin\Debug\VillageAdventure.exe.config
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\bin\Debug\VillageAdventure.exe
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\bin\Debug\VillageAdventure.pdb
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.AssemblyReference.cache
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.frm_doodlejump.resources
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.frm_main.resources
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.Menu.resources
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.PacMan.resources
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.Properties.Resources.resources
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.RaceGame.resources
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.GenerateResource.cache
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.CoreCompileInputs.cache
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.exe
+C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.pdb

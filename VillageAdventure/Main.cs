@@ -131,7 +131,7 @@ namespace VillageAdventure
             {
                 pbx_tent2.Location = new Point(800, 800);
 
-                DialogResult dialogResult = MessageBox.Show("Do you want to play PacMan?", "PacMan", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Do you want to play PacMan? (Early Development Phase)", "PacMan", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     PacMan openPacMan = new PacMan();
@@ -142,6 +142,23 @@ namespace VillageAdventure
                 else if (dialogResult == DialogResult.No)
                 {
                     pbx_tent2.Location = new Point(33, 352);
+                }
+            }
+            if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent3.Bounds))
+            {
+                pbx_tent3.Location = new Point(800, 800);
+
+                DialogResult dialogResult = MessageBox.Show("Do you want to play Doodle Jump? (Early development phase)", "Doodle Jump", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    frm_doodlejump openDoodleJump = new frm_doodlejump();
+                    this.Hide();
+                    openDoodleJump.ShowDialog();
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    pbx_tent3.Location = new Point(33, 352);
                 }
             }
 

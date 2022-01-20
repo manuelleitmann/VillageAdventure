@@ -123,5 +123,13 @@ namespace VillageAdventure
             movePacMan.MoveDown();
             pbx_pacMan.Location = new Point(movePacMan.x, movePacMan.y);
         }
+
+        private void PacMan_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm_main openMainfromPacMan = new frm_main();
+            this.Hide();
+            openMainfromPacMan.ShowDialog();
+            this.Close();
+        }
     }
 }

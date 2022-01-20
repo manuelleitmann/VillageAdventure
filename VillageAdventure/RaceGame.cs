@@ -310,5 +310,13 @@ namespace VillageAdventure
         private void RaceGame_Load(object sender, EventArgs e)
         {
         }
+
+        private void RaceGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm_main openMainfromRace = new frm_main();
+            this.Hide();
+            openMainfromRace.ShowDialog();
+            this.Close();
+        }
     }
 }
