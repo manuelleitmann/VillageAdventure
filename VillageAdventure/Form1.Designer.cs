@@ -36,6 +36,7 @@ namespace VillageAdventure
             this.pbx_platform2 = new System.Windows.Forms.PictureBox();
             this.lbl_restart = new System.Windows.Forms.Label();
             this.lbl_close = new System.Windows.Forms.Label();
+            this.tmr_movePlatforms = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_platform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_platform2)).BeginInit();
@@ -100,6 +101,12 @@ namespace VillageAdventure
             this.lbl_close.TabIndex = 5;
             this.lbl_close.Text = "C - Close";
             // 
+            // tmr_movePlatforms
+            // 
+            this.tmr_movePlatforms.Enabled = true;
+            this.tmr_movePlatforms.Interval = 20;
+            this.tmr_movePlatforms.Tick += new System.EventHandler(this.tmr_movePlatforms_Tick);
+            // 
             // frm_JumpAndRun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +138,7 @@ namespace VillageAdventure
         private System.Windows.Forms.PictureBox pbx_platform2;
         private System.Windows.Forms.Label lbl_restart;
         private System.Windows.Forms.Label lbl_close;
+        private System.Windows.Forms.Timer tmr_movePlatforms;
     }
 }
 
