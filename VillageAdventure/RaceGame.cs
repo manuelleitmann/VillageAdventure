@@ -34,6 +34,7 @@ namespace VillageAdventure
 
         private void RaceGame_KeyDown(object sender, KeyEventArgs e)
         {
+            //lose if player touches house
             if (pbx_car.Bounds.IntersectsWith(pbx_house.Bounds))
             {
                 pbx_house.Location = new Point(800, 800);
@@ -55,6 +56,7 @@ namespace VillageAdventure
                 }
             }
 
+            //movement class
             CharacterMovement giveDirections = new CharacterMovement();
             giveDirections.x = pbx_car.Location.X;
             giveDirections.y = pbx_car.Location.Y;
@@ -81,8 +83,10 @@ namespace VillageAdventure
                 pbx_car.Height = 44;
                 pbx_car.Width = 72;
 
+                //if the player hits the finish line
                 if (pbx_car.Bounds.IntersectsWith(pbx_finishLine.Bounds))
                 {
+                    //set new location to prevent loop
                     pbx_finishLine.Location = new Point(800, 800);
                     pbx_enemy.Location = new Point(800, 800);
 
@@ -119,18 +123,19 @@ namespace VillageAdventure
             }
         }
         
-        //remove multiple timers --> try to make with one timer
+        //timers for the different directions of the enemy
         private void tmr_raceGame_Tick(object sender, EventArgs e)
         {
             int x = 7;
             int y = 0;
 
-           
             if (pbx_enemy.Bounds.IntersectsWith(pbx_changeDirection.Bounds))
             {
+                //if the enemy hits a picture box his direction will be changed
                 tmr_down.Enabled = true;
                 tmr_raceGame.Enabled = false;
 
+                //to change the direction the enemy's car is facing
                 pbx_enemy.Height = 72;
                 pbx_enemy.Width = 44;
             }
@@ -138,7 +143,8 @@ namespace VillageAdventure
             pbx_enemy.Top += y;
             pbx_enemy.Left += x;
 
-            #region Enemy Intercection
+            #region Enemy Intersection
+            //if car hits enemy
             if (pbx_car.Bounds.IntersectsWith(pbx_enemy.Bounds))
             {
                 pbx_enemy.Location = new Point(800, 800);
@@ -264,6 +270,7 @@ namespace VillageAdventure
 
         public void CheckBounds()
         {
+            //to check if the player leaves the form
             if (pbx_car.Left < 0 || pbx_car.Width + pbx_car.Left > this.ClientRectangle.Width)
             {
                 pbx_car.Location = new Point(12, 77);
@@ -305,10 +312,6 @@ namespace VillageAdventure
                     this.Close();
                 }
             }
-        }
-
-        private void RaceGame_Load(object sender, EventArgs e)
-        {
         }
 
         private void RaceGame_FormClosed(object sender, FormClosedEventArgs e)

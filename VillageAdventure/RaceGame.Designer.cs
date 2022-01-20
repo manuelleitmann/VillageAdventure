@@ -167,7 +167,6 @@ namespace VillageAdventure
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaceGame";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RaceGame_FormClosed);
-            this.Load += new System.EventHandler(this.RaceGame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaceGame_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_enemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_car)).EndInit();

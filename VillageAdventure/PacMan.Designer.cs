@@ -597,7 +597,6 @@ namespace VillageAdventure
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PacMan";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PacMan_FormClosed);
-            this.Load += new System.EventHandler(this.PacMan_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PacMan_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_pacMan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_prison1)).EndInit();

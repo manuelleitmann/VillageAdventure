@@ -78,7 +78,6 @@ namespace VillageAdventure
             giveDirections.x = pbx_mainCharacter.Location.X;
             giveDirections.y = pbx_mainCharacter.Location.Y;
 
-            //write in timer not in KeyDown
             #region Keys
             if (e.KeyCode == Keys.W)
             {
@@ -112,6 +111,7 @@ namespace VillageAdventure
 
             if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent1.Bounds))
             {
+                //set the tent to a new location to prevent getting in a loop
                 pbx_tent1.Location = new Point(800, 800);
 
                 DialogResult dialogResult = MessageBox.Show("Do you want to play the Race Game?", "Race Game", MessageBoxButtons.YesNo);
@@ -194,10 +194,10 @@ namespace VillageAdventure
 
         public void CheckBounds()
         {
+            //to check if the player leaves the form
             if (pbx_mainCharacter.Left < 0 || pbx_mainCharacter.Width + pbx_mainCharacter.Left > this.ClientRectangle.Width)
             {
                 pbx_mainCharacter.Location = new Point(233, 442);
-
                 DialogResult checkBounds = MessageBox.Show("You can't go there!", "Stay in the Village!", MessageBoxButtons.OK);
             }
            
@@ -208,19 +208,9 @@ namespace VillageAdventure
             }
         }
 
-            private void pbx_background_Click(object sender, EventArgs e)
-            {
-                
-            }
-
         private void frm_main_Load(object sender, EventArgs e)
         {
             pbx_mainCharacter.BringToFront();
-        }
-
-        private void pbx_logo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

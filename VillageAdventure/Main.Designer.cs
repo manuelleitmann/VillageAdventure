@@ -96,7 +96,6 @@ namespace VillageAdventure
             this.pbx_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_logo.TabIndex = 16;
             this.pbx_logo.TabStop = false;
-            this.pbx_logo.Click += new System.EventHandler(this.pbx_logo_Click);
             // 
             // pbx_mainCharacter
             // 
@@ -259,7 +258,6 @@ namespace VillageAdventure
             this.pbx_background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_background.TabIndex = 0;
             this.pbx_background.TabStop = false;
-            this.pbx_background.Click += new System.EventHandler(this.pbx_background_Click);
             // 
             // frm_main
             // 

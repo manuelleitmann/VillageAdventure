@@ -26,11 +26,6 @@ namespace VillageAdventure
             this.KeyPreview = true;
         }
 
-        private void PacMan_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void PacMan_KeyDown(object sender, KeyEventArgs e)
         {         
             //Movement
@@ -81,11 +76,13 @@ namespace VillageAdventure
 
         private void Reset(int test)
         {
-            //to reset everything in starting position after the user collected all coins
+            //to reset everything in starting position after the user collected all coins (not in use yet)
         }
 
+        //to move Pac-Man
         private void tmr_PacManUp_Tick(object sender, EventArgs e)
         {
+            
             movePacMan.x = pbx_pacMan.Location.X;
             movePacMan.y = pbx_pacMan.Location.Y;
 
@@ -94,6 +91,7 @@ namespace VillageAdventure
 
             if (pbx_pacMan.Bounds.IntersectsWith(pbx_wall4.Bounds))
             {
+                //to check in which direction Pac-Man is moving
                 tmr_PacManLeft.Enabled = false;
                 checkUp = true;
                 checkLeft = false;
