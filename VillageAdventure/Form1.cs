@@ -20,8 +20,10 @@ namespace VillageAdventure
         private int force = 0;
         private int speed = 10;
         private bool playerOnFloor;
-        PictureBox pbx_randomPlatform = new PictureBox();
-        PictureBox pbx_newPlatform = new PictureBox();
+        PictureBox pbx_randomPlatform = new PictureBox();//first platform
+        PictureBox pbx_newPlatform = new PictureBox();//second platform
+        PictureBox pbx_newPlatform2 = new PictureBox();//third platform
+        PictureBox pbx_newPlatform3 = new PictureBox();//fourth platform
         #endregion
         #region Lists
         List<PictureBox> list = new List<PictureBox>();
@@ -66,7 +68,6 @@ namespace VillageAdventure
             left = false;
             right = false;
         }
-
         private void frm_JumpAndRun_Load(object sender, EventArgs e)
         {
             pbx_player.Location = new Point(0, ClientSize.Height - pbx_player.Height - pbx_platform.Height);
@@ -81,19 +82,18 @@ namespace VillageAdventure
             pbx_randomPlatform.Location = new Point(1000, platformPositionHeight);
             pbx_randomPlatform.Tag = "platform";
             pbx_randomPlatform.Visible = true;
-            Controls.Add(pbx_randomPlatform);
-
-            
+            Controls.Add(pbx_randomPlatform);            
             #endregion
-            #region List
 
+            #region List
             list.Add(pbx_platform);
             list.Add(pbx_platform2);
             list.Add(pbx_randomPlatform);
-
+            list.Add(pbx_newPlatform);
+            list.Add(pbx_newPlatform2);
+            list.Add(pbx_newPlatform3);
             #endregion
         }
-
         private void tmr_move_Tick(object sender, EventArgs e)
         {
             #region FormDetection
@@ -167,22 +167,73 @@ namespace VillageAdventure
 
         private void tmr_movePlatforms_Tick(object sender, EventArgs e)
         {
-            pbx_randomPlatform.Left -= 2;
-            
-            pbx_newPlatform.Left -= 5;
-            DoubleBuffered = true;
+            //do while c != true 
 
-            if (pbx_randomPlatform.Left <= 600)
+            pbx_randomPlatform.Left -= 7;//for the first platform
+            DoubleBuffered = true;
+            //if (pbx_randomPlatform.Bounds.IntersectsWith(pbx_collisionSpawnLeft.Bounds))
+            //{
+
+            //}
+
+            if (pbx_randomPlatform.Bounds.IntersectsWith(pbx_collisionSpawnNew.Bounds)/* && pbx_randomPlatform.Bounds.IntersectsWith(pbx_collisionSpawnNew.Bounds) != true*/)
             {
                 Random rnd = new Random();
-                 int platformPositionHeight = rnd.Next(0, 591 - pbx_newPlatform.Height);
+                int platformPositionHeight = rnd.Next(0, 591 - pbx_newPlatform.Height);
                 pbx_newPlatform.BackColor = Color.Blue;
                 pbx_newPlatform.Size = new Size(100, 20);
                 pbx_newPlatform.Location = new Point(1000, platformPositionHeight);
                 pbx_newPlatform.Tag = "platform";
                 pbx_newPlatform.Visible = true;
                 Controls.Add(pbx_newPlatform);
+                pbx_collisionSpawnNew.Location = new Point(800,800);//set new location so the platforms don't spawn too often
             }
+            if (pbx_randomPlatform.Bounds.IntersectsWith(pbx_reEnable.Bounds))
+            {
+                pbx_collisionSpawnNew.Location = new Point(679, -1);
+            }
+            
+            pbx_newPlatform.Left -= 7;
+            DoubleBuffered = true;
+
+            if (pbx_newPlatform.Bounds.IntersectsWith(pbx_collisionSpawnNew.Bounds))
+            {
+                Random rnd = new Random();
+                int platformPositionHeight = rnd.Next(0, 591 - pbx_newPlatform2.Height);
+                pbx_newPlatform2.BackColor = Color.Yellow;
+                pbx_newPlatform2.BorderStyle = BorderStyle.FixedSingle;
+                pbx_newPlatform2.Size = new Size(100, 20);
+                pbx_newPlatform2.Location = new Point(1000, platformPositionHeight);
+                pbx_newPlatform2.Tag = "platform";
+                pbx_newPlatform2.Visible = true;
+                Controls.Add(pbx_newPlatform2);
+                pbx_collisionSpawnNew.Location = new Point(800, 800);
+            }
+            if (pbx_newPlatform.Bounds.IntersectsWith(pbx_reEnable.Bounds))
+            {
+                pbx_collisionSpawnNew.Location = new Point(679, -1);
+            }
+            pbx_newPlatform2.Left -= 7;
+            DoubleBuffered = true;
+
+            if (pbx_newPlatform2.Bounds.IntersectsWith(pbx_collisionSpawnNew.Bounds))
+            {
+                Random rnd = new Random();
+                int platformPositionHeight = rnd.Next(0, 591 - pbx_newPlatform3.Height);
+                pbx_newPlatform3.BackColor = Color.Green;
+                pbx_newPlatform3.Size = new Size(100, 20);
+                pbx_newPlatform3.Location = new Point(1000, platformPositionHeight);
+                pbx_newPlatform3.Tag = "platform";
+                pbx_newPlatform3.Visible = true;
+                Controls.Add(pbx_newPlatform3);
+                pbx_collisionSpawnNew.Location = new Point(800, 800);
+            }
+            if (pbx_newPlatform2.Bounds.IntersectsWith(pbx_reEnable.Bounds))
+            {
+                pbx_collisionSpawnNew.Location = new Point(679, -1);
+            }
+            pbx_newPlatform3.Left -= 7;
+            DoubleBuffered = true;
         }
     }
 }
