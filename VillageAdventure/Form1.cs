@@ -62,6 +62,10 @@ namespace VillageAdventure
                     jump = true;
                     force = gravity;
             }
+            if(e.KeyCode == Keys.S)
+            {
+                //Start Game
+            }
             
         }
 
@@ -72,7 +76,7 @@ namespace VillageAdventure
         }
         private void frm_JumpAndRun_Load(object sender, EventArgs e)
         {
-            pbx_player.Location = new Point(1, ClientSize.Height - pbx_player.Height);
+            pbx_player.Location = new Point(1, pbx_platformStart.Top - pbx_player.Height);
             this.DoubleBuffered = true;//makes the movement of the player smoother
             
             #region random Platforms
@@ -86,7 +90,7 @@ namespace VillageAdventure
             pbx_randomPlatform.Visible = true;
             Controls.Add(pbx_randomPlatform);//without this the pictureboxes wouldn't spawn
             #endregion
-            pbx_collisionSpawnEnd.Location = new Point(0,-1);//set new point outside of the form ----- TODO:create pictureboxes for spawning platforms again
+            pbx_collisionSpawnNew.Location = new Point(0,-1);//set new point outside of the form ----- TODO:create pictureboxes for spawning platforms again
             pbx_reEnableEnd.Location = new Point(-110, -1);//set new point to set the pbx_collisionSpawnEnd to the old position
             #region List
             
@@ -213,6 +217,7 @@ namespace VillageAdventure
                     pbx_player.Top = p.Top - pbx_player.Height;
                     pbx_player.Left -= 7;
                     DoubleBuffered = true;
+                    jump = false;
                 }
                 //left side of the platform
                 if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Left + pbx_player.Width >= p.Left && pbx_player.Left <= p.Left + p.Width)
@@ -241,11 +246,34 @@ namespace VillageAdventure
                 //gameover if on the left or on the bottom
                 if(pbx_player.Left <= 0 || pbx_player.Top + pbx_player.Height >= ClientSize.Height)
                 {
-                    MessageBox.Show("Game over!");
-
-                }
-                #endregion
+                    //MessageBox.Show("Game over!");
+                }               
             }
+            #endregion
+            #region ColissionDetectionStart
+            //top
+            if (pbx_player.Bounds.IntersectsWith(pbx_platformStart.Bounds) && pbx_player.Top + pbx_player.Height >= pbx_platformStart.Top && pbx_player.Left >= pbx_platformStart.Left && pbx_player.Left + pbx_player.Width <= pbx_platformStart.Left + pbx_platformStart.Width)
+            {
+                //MessageBox.Show(".");
+                pbx_player.Top = pbx_platformStart.Top - pbx_player.Height;
+                DoubleBuffered = true;
+                jump = false;
+            }
+            //left side of the platform
+            if (pbx_player.Bounds.IntersectsWith(pbx_platformStart.Bounds) && pbx_player.Left + pbx_player.Width >= pbx_platformStart.Left && pbx_player.Left <= pbx_platformStart.Left + pbx_platformStart.Width)
+            {
+                //MessageBox.Show(".");
+                right = false;
+                DoubleBuffered = true;
+            }
+            //right side of the platform
+            if (pbx_player.Bounds.IntersectsWith(pbx_platformStart.Bounds) && pbx_player.Left <= pbx_platformStart.Left + pbx_platformStart.Width/* && pbx_player.Left >= p.Left + p.Width - 1*/)
+            {
+                //MessageBox.Show(".");
+                left = false;
+                DoubleBuffered = true;
+            }
+            #endregion
         }
     }
 }

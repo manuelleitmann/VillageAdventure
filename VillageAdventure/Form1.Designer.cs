@@ -37,8 +37,19 @@ namespace VillageAdventure
             this.lbl_close = new System.Windows.Forms.Label();
             this.tmr_movePlatforms = new System.Windows.Forms.Timer(this.components);
             this.tmr_movePlayerPlatform = new System.Windows.Forms.Timer(this.components);
+            this.pbx_collisionSpawnNew = new System.Windows.Forms.PictureBox();
+            this.pbx_reEnable = new System.Windows.Forms.PictureBox();
+            this.pbx_reEnableEnd = new System.Windows.Forms.PictureBox();
+            this.pbx_collisionSpawnEnd = new System.Windows.Forms.PictureBox();
+            this.pbx_platformStart = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_platform2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_collisionSpawnNew)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_reEnable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_reEnableEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_collisionSpawnEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_platformStart)).BeginInit();
             this.SuspendLayout();
             // 
             // tmr_move
@@ -101,15 +112,82 @@ namespace VillageAdventure
             this.tmr_movePlayerPlatform.Interval = 20;
             this.tmr_movePlayerPlatform.Tick += new System.EventHandler(this.tmr_movePlayerPlatform_Tick);
             // 
+            // pbx_collisionSpawnNew
+            // 
+            this.pbx_collisionSpawnNew.BackColor = System.Drawing.Color.Transparent;
+            this.pbx_collisionSpawnNew.Location = new System.Drawing.Point(671, -1);
+            this.pbx_collisionSpawnNew.Name = "pbx_collisionSpawnNew";
+            this.pbx_collisionSpawnNew.Size = new System.Drawing.Size(10, 552);
+            this.pbx_collisionSpawnNew.TabIndex = 6;
+            this.pbx_collisionSpawnNew.TabStop = false;
+            this.pbx_collisionSpawnNew.Visible = false;
+            // 
+            // pbx_reEnable
+            // 
+            this.pbx_reEnable.BackColor = System.Drawing.Color.Transparent;
+            this.pbx_reEnable.Location = new System.Drawing.Point(460, -1);
+            this.pbx_reEnable.Name = "pbx_reEnable";
+            this.pbx_reEnable.Size = new System.Drawing.Size(10, 552);
+            this.pbx_reEnable.TabIndex = 7;
+            this.pbx_reEnable.TabStop = false;
+            this.pbx_reEnable.Visible = false;
+            // 
+            // pbx_reEnableEnd
+            // 
+            this.pbx_reEnableEnd.BackColor = System.Drawing.Color.Transparent;
+            this.pbx_reEnableEnd.Location = new System.Drawing.Point(1, -1);
+            this.pbx_reEnableEnd.Name = "pbx_reEnableEnd";
+            this.pbx_reEnableEnd.Size = new System.Drawing.Size(10, 552);
+            this.pbx_reEnableEnd.TabIndex = 8;
+            this.pbx_reEnableEnd.TabStop = false;
+            this.pbx_reEnableEnd.Visible = false;
+            // 
+            // pbx_collisionSpawnEnd
+            // 
+            this.pbx_collisionSpawnEnd.BackColor = System.Drawing.Color.Transparent;
+            this.pbx_collisionSpawnEnd.Location = new System.Drawing.Point(99, -1);
+            this.pbx_collisionSpawnEnd.Name = "pbx_collisionSpawnEnd";
+            this.pbx_collisionSpawnEnd.Size = new System.Drawing.Size(10, 552);
+            this.pbx_collisionSpawnEnd.TabIndex = 9;
+            this.pbx_collisionSpawnEnd.TabStop = false;
+            this.pbx_collisionSpawnEnd.Visible = false;
+            // 
+            // pbx_platformStart
+            // 
+            this.pbx_platformStart.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pbx_platformStart.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbx_platformStart.Location = new System.Drawing.Point(0, 196);
+            this.pbx_platformStart.Name = "pbx_platformStart";
+            this.pbx_platformStart.Size = new System.Drawing.Size(161, 19);
+            this.pbx_platformStart.TabIndex = 10;
+            this.pbx_platformStart.TabStop = false;
+            this.pbx_platformStart.Tag = "platform";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 18);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "S - Start";
+            // 
             // frm_JumpAndRun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 552);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pbx_platformStart);
+            this.Controls.Add(this.pbx_collisionSpawnEnd);
+            this.Controls.Add(this.pbx_reEnableEnd);
             this.Controls.Add(this.lbl_close);
             this.Controls.Add(this.lbl_restart);
             this.Controls.Add(this.pbx_platform2);
             this.Controls.Add(this.pbx_player);
+            this.Controls.Add(this.pbx_collisionSpawnNew);
+            this.Controls.Add(this.pbx_reEnable);
             this.Name = "frm_JumpAndRun";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JumpAndRun";
@@ -118,6 +196,11 @@ namespace VillageAdventure
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_platform2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_collisionSpawnNew)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_reEnable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_reEnableEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_collisionSpawnEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_platformStart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,6 +214,12 @@ namespace VillageAdventure
         private System.Windows.Forms.Label lbl_close;
         private System.Windows.Forms.Timer tmr_movePlatforms;
         private System.Windows.Forms.Timer tmr_movePlayerPlatform;
+        private System.Windows.Forms.PictureBox pbx_collisionSpawnNew;
+        private System.Windows.Forms.PictureBox pbx_reEnable;
+        private System.Windows.Forms.PictureBox pbx_reEnableEnd;
+        private System.Windows.Forms.PictureBox pbx_collisionSpawnEnd;
+        private System.Windows.Forms.PictureBox pbx_platformStart;
+        private System.Windows.Forms.Label label1;
     }
 }
 
