@@ -19,6 +19,7 @@ namespace VillageAdventure
         private int gravity = 25;
         private int force = 0;
         private int speed = 10;
+        private int time = 0;
         private bool playerOnFloor;
         public int platformPositionHeight;
         PictureBox pbx_randomPlatform = new PictureBox();//first platform
@@ -33,7 +34,6 @@ namespace VillageAdventure
         {
             InitializeComponent();
         }
-
 
         private void keyDown(object sender, KeyEventArgs e)
         {
@@ -59,8 +59,11 @@ namespace VillageAdventure
             
             if (e.KeyCode == Keys.Space)
             {
+                if (jump != true)
+                {
                     jump = true;
                     force = gravity;
+                }
             }
             if(e.KeyCode == Keys.S)
             {
@@ -74,6 +77,7 @@ namespace VillageAdventure
             left = false;
             right = false;
         }
+        
         private void frm_JumpAndRun_Load(object sender, EventArgs e)
         {
             pbx_player.Location = new Point(1, pbx_platformStart.Top - pbx_player.Height);
@@ -82,7 +86,7 @@ namespace VillageAdventure
             #region random Platforms
             Random rnd = new Random();                     
             
-            platformPositionHeight = rnd.Next(125, 400);//create first platform - Picturebox Height = 123 --> random between 125 and 591
+            platformPositionHeight = rnd.Next(150, 400);//create first platform - Picturebox Height = 123 --> random between 150 and 591
             pbx_randomPlatform.BackColor = Color.Black;
             pbx_randomPlatform.Size = new Size(100, 20);
             pbx_randomPlatform.Location = new Point(1000, platformPositionHeight);
@@ -94,13 +98,14 @@ namespace VillageAdventure
             pbx_reEnableEnd.Location = new Point(-110, -1);//set new point to set the pbx_collisionSpawnEnd to the old position
             #region List
             
-            list.Add(pbx_platform2);//test
+            //list.Add(pbx_platform2);//test
             list.Add(pbx_randomPlatform);
             list.Add(pbx_newPlatform);
             list.Add(pbx_newPlatform2);
             list.Add(pbx_newPlatform3);
             #endregion
         }
+        
         private void tmr_move_Tick(object sender, EventArgs e)
         {
             #region FormDetection
@@ -116,6 +121,7 @@ namespace VillageAdventure
             {
                 pbx_player.Top -= force;
                 force -= 2;
+                //jump = false;
             }      
             if (pbx_player.Top + pbx_player.Height >= ClientSize.Height)
             {
@@ -130,14 +136,14 @@ namespace VillageAdventure
             
             
         }
-        #region movePlatforms
+        
         private void tmr_movePlatforms_Tick(object sender, EventArgs e)
         {
             if(pbx_randomPlatform.Left < 0)//Black platform
             {
                 pbx_randomPlatform.Left = ClientSize.Width + pbx_randomPlatform.Width;
                 Random rnd = new Random();
-                pbx_randomPlatform.Top = rnd.Next(125, 400);
+                pbx_randomPlatform.Top = rnd.Next(150, 400);
             }
 
             pbx_randomPlatform.Left -= 7;//movement for the first platform
@@ -146,7 +152,7 @@ namespace VillageAdventure
             if (pbx_randomPlatform.Bounds.IntersectsWith(pbx_collisionSpawnNew.Bounds))//spawn blue platform
             {
                 Random rnd = new Random();
-                int platformPositionHeight = rnd.Next(125, 400);
+                int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform.BackColor = Color.Blue;
                 pbx_newPlatform.Size = new Size(100, 20);
                 pbx_newPlatform.Location = new Point(1000, platformPositionHeight);
@@ -167,7 +173,7 @@ namespace VillageAdventure
             if (pbx_newPlatform.Bounds.IntersectsWith(pbx_collisionSpawnNew.Bounds))//spawn yellow platform
             {
                 Random rnd = new Random();
-                int platformPositionHeight = rnd.Next(125, 400);
+                int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform2.BackColor = Color.Yellow;
                 pbx_newPlatform2.BorderStyle = BorderStyle.FixedSingle;
                 pbx_newPlatform2.Size = new Size(100, 20);
@@ -187,7 +193,7 @@ namespace VillageAdventure
             if (pbx_newPlatform2.Bounds.IntersectsWith(pbx_collisionSpawnNew.Bounds))//spawn red platform
             {
                 Random rnd = new Random();
-                int platformPositionHeight = rnd.Next(125, 400);
+                int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform3.BackColor = Color.Red;
                 pbx_newPlatform3.Size = new Size(100, 20);
                 pbx_newPlatform3.Location = new Point(1000, platformPositionHeight);
@@ -203,8 +209,7 @@ namespace VillageAdventure
             pbx_newPlatform3.Left -= 7;//movement for the fourth platform
             DoubleBuffered = true;
         }
-        #endregion
-
+        
         private void tmr_movePlayerPlatform_Tick(object sender, EventArgs e)
         {
             #region ColissionDetection
@@ -274,6 +279,37 @@ namespace VillageAdventure
                 DoubleBuffered = true;
             }
             #endregion
+            #region ColissionDetectionGameOver
+            if (pbx_player.Bounds.IntersectsWith(pbx_platform2.Bounds) && pbx_player.Top + pbx_player.Height >= pbx_platform2.Top && pbx_player.Left >= pbx_platform2.Left && pbx_player.Left + pbx_player.Width <= pbx_platform2.Left + pbx_platform2.Width)
+            {
+                pbx_player.Top = pbx_platform2.Top - pbx_player.Height;
+                pbx_platform2.Location = new Point(800, 800);
+                GameOver gmeovr = new GameOver();
+                gmeovr.Show();
+                this.Hide();
+            }
+            if(pbx_player.Bounds.IntersectsWith(pbx_collisionGameOver.Bounds))
+            {  
+                GameOver gmeovr = new GameOver();             
+                gmeovr.Show();
+                this.Hide();
+                pbx_collisionGameOver.Location = new Point(800, 800);
+            }
+            #endregion
+        }
+
+        private void tmr_removeStart_Tick(object sender, EventArgs e)
+        {
+            if(lbl_time.Text == "50")
+            {
+                pbx_platformStart.Location = new Point(800, 800);
+            }
+        }
+
+        private void tmr_time_Tick(object sender, EventArgs e)
+        {
+            time++;
+            lbl_time.Text = time.ToString();
         }
     }
 }
