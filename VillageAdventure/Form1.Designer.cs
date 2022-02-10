@@ -107,7 +107,7 @@ namespace VillageAdventure
             // tmr_movePlatforms
             // 
             this.tmr_movePlatforms.Enabled = true;
-            this.tmr_movePlatforms.Interval = 20;
+            this.tmr_movePlatforms.Interval = 15;
             this.tmr_movePlatforms.Tick += new System.EventHandler(this.tmr_movePlatforms_Tick);
             // 
             // tmr_movePlayerPlatform

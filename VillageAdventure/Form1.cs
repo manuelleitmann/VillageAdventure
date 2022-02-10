@@ -16,7 +16,7 @@ namespace VillageAdventure
         private bool left = false;
         private bool right = false;
         private bool jump = false;
-        private int gravity = 25;
+        private int gravity = 30;
         private int force = 0;
         private int speed = 10;
         private int time = 0;
@@ -84,6 +84,7 @@ namespace VillageAdventure
             this.DoubleBuffered = true;//makes the movement of the player smoother
             
             #region random Platforms
+            
             Random rnd = new Random();                     
             
             platformPositionHeight = rnd.Next(150, 400);//create first platform - Picturebox Height = 123 --> random between 150 and 591
@@ -154,19 +155,18 @@ namespace VillageAdventure
                 Random rnd = new Random();
                 int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform.BackColor = Color.Blue;
+                pbx_newPlatform.BorderStyle = BorderStyle.FixedSingle;
                 pbx_newPlatform.Size = new Size(100, 20);
                 pbx_newPlatform.Location = new Point(1000, platformPositionHeight);
                 pbx_newPlatform.Tag = "platform";
                 pbx_newPlatform.Visible = true;
                 Controls.Add(pbx_newPlatform);
-                pbx_collisionSpawnNew.Location = new Point(800, 800);//set new location so the platforms don't spawn too often
+                pbx_collisionSpawnNew.Location = new Point(800, 800);
             }
-
             if (pbx_randomPlatform.Bounds.IntersectsWith(pbx_reEnable.Bounds))
             {
                 pbx_collisionSpawnNew.Location = new Point(679, -1);
             }
-
             pbx_newPlatform.Left -= 7;//movement for the second platform
             DoubleBuffered = true;
 
@@ -218,7 +218,6 @@ namespace VillageAdventure
                 //top
                 if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Top + pbx_player.Height >= p.Top && pbx_player.Left >= p.Left && pbx_player.Left + pbx_player.Width <= p.Left + p.Width)
                 {
-                    //MessageBox.Show(".");
                     pbx_player.Top = p.Top - pbx_player.Height;
                     pbx_player.Left -= 7;
                     DoubleBuffered = true;
@@ -227,14 +226,12 @@ namespace VillageAdventure
                 //left side of the platform
                 if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Left + pbx_player.Width >= p.Left && pbx_player.Left <= p.Left + p.Width)
                 {
-                    //MessageBox.Show(".");
                     right = false;
                     DoubleBuffered = true;
                 }
                 //right side of the platform
                 if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Left <= p.Left + p.Width/* && pbx_player.Left >= p.Left + p.Width - 1*/)
                 {
-                    //MessageBox.Show(".");
                     left = false;
                     DoubleBuffered = true;
                 }

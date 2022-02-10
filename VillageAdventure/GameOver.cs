@@ -23,7 +23,7 @@ namespace VillageAdventure
             jar.Show();
             this.Hide();
         }
-
+ 
         private void btn_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
