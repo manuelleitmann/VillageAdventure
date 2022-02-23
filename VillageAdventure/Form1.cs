@@ -83,23 +83,22 @@ namespace VillageAdventure
             pbx_player.Location = new Point(1, pbx_platformStart.Top - pbx_player.Height);
             this.DoubleBuffered = true;//makes the movement of the player smoother
             
-            #region random Platforms
-            
+            #region random Platforms           
             Random rnd = new Random();                     
             
             platformPositionHeight = rnd.Next(150, 400);//create first platform - Picturebox Height = 123 --> random between 150 and 591
             pbx_randomPlatform.BackColor = Color.Black;
-            pbx_randomPlatform.Size = new Size(100, 20);
+            pbx_randomPlatform.Size = new Size(150, 20);
             pbx_randomPlatform.Location = new Point(1000, platformPositionHeight);
             pbx_randomPlatform.Tag = "platform";
             pbx_randomPlatform.Visible = true;
             Controls.Add(pbx_randomPlatform);//without this the pictureboxes wouldn't spawn
             #endregion
+            
             pbx_collisionSpawnNew.Location = new Point(0,-1);//set new point outside of the form ----- TODO:create pictureboxes for spawning platforms again
             pbx_reEnableEnd.Location = new Point(-110, -1);//set new point to set the pbx_collisionSpawnEnd to the old position
-            #region List
             
-            //list.Add(pbx_platform2);//test
+            #region List          
             list.Add(pbx_randomPlatform);
             list.Add(pbx_newPlatform);
             list.Add(pbx_newPlatform2);
@@ -156,7 +155,7 @@ namespace VillageAdventure
                 int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform.BackColor = Color.Blue;
                 pbx_newPlatform.BorderStyle = BorderStyle.FixedSingle;
-                pbx_newPlatform.Size = new Size(100, 20);
+                pbx_newPlatform.Size = new Size(150, 20);
                 pbx_newPlatform.Location = new Point(1000, platformPositionHeight);
                 pbx_newPlatform.Tag = "platform";
                 pbx_newPlatform.Visible = true;
@@ -176,7 +175,7 @@ namespace VillageAdventure
                 int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform2.BackColor = Color.Yellow;
                 pbx_newPlatform2.BorderStyle = BorderStyle.FixedSingle;
-                pbx_newPlatform2.Size = new Size(100, 20);
+                pbx_newPlatform2.Size = new Size(150, 20);
                 pbx_newPlatform2.Location = new Point(1000, platformPositionHeight);
                 pbx_newPlatform2.Tag = "platform";
                 pbx_newPlatform2.Visible = true;
@@ -195,7 +194,7 @@ namespace VillageAdventure
                 Random rnd = new Random();
                 int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform3.BackColor = Color.Red;
-                pbx_newPlatform3.Size = new Size(100, 20);
+                pbx_newPlatform3.Size = new Size(150, 20);
                 pbx_newPlatform3.Location = new Point(1000, platformPositionHeight);
                 pbx_newPlatform3.Tag = "platform";
                 pbx_newPlatform3.Visible = true;
@@ -223,6 +222,11 @@ namespace VillageAdventure
                     DoubleBuffered = true;
                     jump = false;
                 }
+                if (pbx_platformStart.Bounds.IntersectsWith(pbx_platformStart.Bounds) && pbx_player.Top + pbx_player.Height >= pbx_platformStart.Top && pbx_player.Left >= pbx_platformStart.Left && pbx_player.Left + pbx_player.Width <= pbx_platformStart.Left + pbx_platformStart.Width)
+                {
+                    pbx_player.Top = pbx_platformStart.Top - pbx_player.Height;
+                    jump = false;
+                }
                 //left side of the platform
                 if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Left + pbx_player.Width >= p.Left && pbx_player.Left <= p.Left + p.Width)
                 {
@@ -230,7 +234,7 @@ namespace VillageAdventure
                     DoubleBuffered = true;
                 }
                 //right side of the platform
-                if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Left <= p.Left + p.Width/* && pbx_player.Left >= p.Left + p.Width - 1*/)
+                if (pbx_player.Bounds.IntersectsWith(p.Bounds) && pbx_player.Left <= p.Left + p.Width)
                 {
                     left = false;
                     DoubleBuffered = true;
@@ -239,41 +243,10 @@ namespace VillageAdventure
                 {
                     pbx_player.Top += 1;
                 }
-
                 if (jump && pbx_player.Bounds.IntersectsWith(p.Bounds) && force >= 0)
                 {
                     force = 0;
                 }
-
-                //gameover if on the left or on the bottom
-                if(pbx_player.Left <= 0 || pbx_player.Top + pbx_player.Height >= ClientSize.Height)
-                {
-                    //MessageBox.Show("Game over!");
-                }               
-            }
-            #endregion
-            #region ColissionDetectionStart
-            //top
-            if (pbx_player.Bounds.IntersectsWith(pbx_platformStart.Bounds) && pbx_player.Top + pbx_player.Height >= pbx_platformStart.Top && pbx_player.Left >= pbx_platformStart.Left && pbx_player.Left + pbx_player.Width <= pbx_platformStart.Left + pbx_platformStart.Width)
-            {
-                //MessageBox.Show(".");
-                pbx_player.Top = pbx_platformStart.Top - pbx_player.Height;
-                DoubleBuffered = true;
-                jump = false;
-            }
-            //left side of the platform
-            if (pbx_player.Bounds.IntersectsWith(pbx_platformStart.Bounds) && pbx_player.Left + pbx_player.Width >= pbx_platformStart.Left && pbx_player.Left <= pbx_platformStart.Left + pbx_platformStart.Width)
-            {
-                //MessageBox.Show(".");
-                right = false;
-                DoubleBuffered = true;
-            }
-            //right side of the platform
-            if (pbx_player.Bounds.IntersectsWith(pbx_platformStart.Bounds) && pbx_player.Left <= pbx_platformStart.Left + pbx_platformStart.Width/* && pbx_player.Left >= p.Left + p.Width - 1*/)
-            {
-                //MessageBox.Show(".");
-                left = false;
-                DoubleBuffered = true;
             }
             #endregion
             #region ColissionDetectionGameOver
