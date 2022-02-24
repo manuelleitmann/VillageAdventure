@@ -32,14 +32,13 @@ namespace VillageAdventure
             this.components = new System.ComponentModel.Container();
             this.pbx_platformLeft = new System.Windows.Forms.PictureBox();
             this.pbx_platformRight = new System.Windows.Forms.PictureBox();
-            this.pbx_ball = new System.Windows.Forms.PictureBox();
             this.tmr_moveBall = new System.Windows.Forms.Timer(this.components);
             this.lbl_time = new System.Windows.Forms.Label();
             this.lbl_close = new System.Windows.Forms.Label();
             this.lbl_restart = new System.Windows.Forms.Label();
+            this.tmr_time = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_platformLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_platformRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_ball)).BeginInit();
             this.SuspendLayout();
             // 
             // pbx_platformLeft
@@ -60,19 +59,10 @@ namespace VillageAdventure
             this.pbx_platformRight.TabIndex = 1;
             this.pbx_platformRight.TabStop = false;
             // 
-            // pbx_ball
-            // 
-            this.pbx_ball.BackColor = System.Drawing.Color.Black;
-            this.pbx_ball.Location = new System.Drawing.Point(503, 220);
-            this.pbx_ball.Name = "pbx_ball";
-            this.pbx_ball.Size = new System.Drawing.Size(25, 25);
-            this.pbx_ball.TabIndex = 2;
-            this.pbx_ball.TabStop = false;
-            // 
             // tmr_moveBall
             // 
             this.tmr_moveBall.Enabled = true;
-            this.tmr_moveBall.Interval = 350;
+            this.tmr_moveBall.Interval = 10;
             this.tmr_moveBall.Tick += new System.EventHandler(this.tmr_moveBall_Tick);
             // 
             // lbl_time
@@ -104,6 +94,12 @@ namespace VillageAdventure
             this.lbl_restart.TabIndex = 6;
             this.lbl_restart.Text = "R - Restart";
             // 
+            // tmr_time
+            // 
+            this.tmr_time.Enabled = true;
+            this.tmr_time.Interval = 360;
+            this.tmr_time.Tick += new System.EventHandler(this.tmr_time_Tick);
+            // 
             // PingPongGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,17 +108,16 @@ namespace VillageAdventure
             this.Controls.Add(this.lbl_close);
             this.Controls.Add(this.lbl_restart);
             this.Controls.Add(this.lbl_time);
-            this.Controls.Add(this.pbx_ball);
             this.Controls.Add(this.pbx_platformRight);
             this.Controls.Add(this.pbx_platformLeft);
             this.Name = "PingPongGame";
             this.Text = "PingPongGame";
             this.Load += new System.EventHandler(this.PingPongGame_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.PingPongGame_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PingPongGame_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PingPongGame_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_platformLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_platformRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_ball)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,10 +127,10 @@ namespace VillageAdventure
 
         private System.Windows.Forms.PictureBox pbx_platformLeft;
         private System.Windows.Forms.PictureBox pbx_platformRight;
-        private System.Windows.Forms.PictureBox pbx_ball;
         private System.Windows.Forms.Timer tmr_moveBall;
         private System.Windows.Forms.Label lbl_time;
         private System.Windows.Forms.Label lbl_close;
         private System.Windows.Forms.Label lbl_restart;
+        private System.Windows.Forms.Timer tmr_time;
     }
 }
