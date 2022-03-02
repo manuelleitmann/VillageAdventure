@@ -19,3 +19,4 @@ C:\Users\lukas.bucher\Source\Repos\manuelleitmann\VillageAdventure\VillageAdvent
 C:\Users\lukas.bucher\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.pdb
 C:\Users\lukas.bucher\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.GameOver.resources
 C:\Users\lukas.bucher\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.PingPongGame.resources
+C:\Users\lukas.bucher\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.GameOverPingPong.resources

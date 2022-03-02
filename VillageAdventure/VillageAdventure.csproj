@@ -58,6 +58,12 @@
     <Compile Include="GameOver.Designer.cs">
       <DependentUpon>GameOver.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameOverPingPong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameOverPingPong.Designer.cs">
+      <DependentUpon>GameOverPingPong.cs</DependentUpon>
+    </Compile>
     <Compile Include="PingPongGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameOver.resx">
       <DependentUpon>GameOver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameOverPingPong.resx">
+      <DependentUpon>GameOverPingPong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PingPongGame.resx">
       <DependentUpon>PingPongGame.cs</DependentUpon>
