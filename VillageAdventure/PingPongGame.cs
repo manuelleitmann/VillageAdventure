@@ -19,8 +19,10 @@ namespace VillageAdventure
         private int ballHeight = 20;
         private int locationX;
         private int locationY = 0;
-        private int speedBallX = 2;
-        private int speedBallY = 2;
+        private int speedBallX = 4;
+        private int speedBallY = 4;
+        private int pointsLeft;
+        private int pointsRight;
         public PingPongGame()
         {
             InitializeComponent();
@@ -31,38 +33,38 @@ namespace VillageAdventure
         {
             Random rnd = new Random();
             locationX = rnd.Next(0, ClientSize.Width);
-            //´verhindert flackern
+            //verhindert flackern
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
+
         }
 
         private void tmr_moveBall_Tick(object sender, EventArgs e)
         {
+            //TODO --> automatic movement of the right platform
             //moveBall
             locationX += speedBallX;
-            if (locationX == 0)
+            if (locationX <= 0)//left side
             {
-                GameOverPingPong gpp = new GameOverPingPong();
-                gpp.Show();
-                this.Close();
+                speedBallX = -speedBallX;
+                pointsRight++;
+                lbl_pointsRight.Text = Convert.ToString(pointsRight);
             }
-            else if (locationX + ballWidth == ClientSize.Width)
+            else if (locationX + ballWidth >= ClientSize.Width)//right side
             {
-                GameOverPingPong gpp = new GameOverPingPong();
-                gpp.Show();
-                this.Close();
+                speedBallX = -speedBallX;
+                pointsLeft++;
+                lbl_pointsLeft.Text = Convert.ToString(pointsLeft);
             }
-            //TODO
-            //locationY und locationX updaten --> ball.top, ball.left
-            //Punkte einbauen anstatt Levelende
+
             locationY += speedBallY;
-            if(locationY < 0)
+            if(locationY <= 0)
             {
                 speedBallY = -speedBallY;
             }
-            else if(locationY + ballHeight > ClientSize.Height)
+            else if(locationY + ballHeight >= ClientSize.Height)
             {
-                speedBallY -= speedBallY;             
+                speedBallY = -speedBallY;             
             }
             
             Refresh();
@@ -75,6 +77,10 @@ namespace VillageAdventure
             {
                 speedBallX = -speedBallX;
             }
+            #endregion
+            #region automatic movement right platform
+            Random rnd = new Random();
+            pbx_platformRight.Top = locationY -50;
             #endregion
         }
 
@@ -130,8 +136,9 @@ namespace VillageAdventure
         private void PingPongGame_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            e.Graphics.FillEllipse(Brushes.Blue, locationX, locationY, ballWidth, ballHeight);
+            e.Graphics.FillEllipse(Brushes.Red, locationX, locationY, ballWidth, ballHeight);
             e.Graphics.DrawEllipse(Pens.Black, locationX, locationY, ballWidth, ballHeight);
+            
         }
 
         private void tmr_time_Tick(object sender, EventArgs e)
