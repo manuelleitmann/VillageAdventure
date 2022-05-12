@@ -16,7 +16,7 @@ namespace VillageAdventure
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PingPongGame());
+            Application.Run(new frm_JumpAndRun());
         }
     }
 }

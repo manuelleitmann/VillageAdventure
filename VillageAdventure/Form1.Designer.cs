@@ -160,7 +160,7 @@ namespace VillageAdventure
             // 
             this.pbx_platformStart.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pbx_platformStart.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbx_platformStart.Location = new System.Drawing.Point(0, 196);
+            this.pbx_platformStart.Location = new System.Drawing.Point(1, 264);
             this.pbx_platformStart.Name = "pbx_platformStart";
             this.pbx_platformStart.Size = new System.Drawing.Size(161, 19);
             this.pbx_platformStart.TabIndex = 10;

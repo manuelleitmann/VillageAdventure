@@ -19,8 +19,8 @@ namespace VillageAdventure
         private int ballHeight = 20;
         private int locationX;
         private int locationY = 0;
-        private int speedBallX = 4;
-        private int speedBallY = 4;
+        private int speedBallX = 8;
+        private int speedBallY = 8;
         private int pointsLeft;
         private int pointsRight;
         public PingPongGame()
@@ -33,7 +33,7 @@ namespace VillageAdventure
         {
             Random rnd = new Random();
             locationX = rnd.Next(0, ClientSize.Width);
-            //verhindert flackern
+            //prevent flicker
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
 
