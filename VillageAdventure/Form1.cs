@@ -18,7 +18,7 @@ namespace VillageAdventure
         private bool jump = false;
         private int gravity = 30;
         private int force = 0;
-        private int speed = 10;
+        private int speed = 10;//speed of the player
         private int time = 0;
         private bool playerOnFloor;
         public int platformPositionHeight;
@@ -92,7 +92,7 @@ namespace VillageAdventure
             pbx_randomPlatform.Location = new Point(1000, platformPositionHeight);
             pbx_randomPlatform.Tag = "platform";
             pbx_randomPlatform.Visible = true;
-            Controls.Add(pbx_randomPlatform);//without this the pictureboxes wouldn't spawn
+            //Controls.Add(pbx_randomPlatform);//without this the pictureboxes wouldn't spawn
             #endregion
             
             pbx_collisionSpawnNew.Location = new Point(0,-1);//set new point outside of the form ----- TODO:create pictureboxes for spawning platforms again
