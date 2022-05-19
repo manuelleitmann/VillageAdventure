@@ -25,3 +25,6 @@ C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj
 C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.csproj.CoreCompileInputs.cache
 C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.exe
 C:\Users\manue\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.pdb
+C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.PacManTest.resources
+C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.WorldTwo.resources
+C:\Users\manuel.leitmann\Source\Repos\manuelleitmann\VillageAdventure\VillageAdventure\obj\Debug\VillageAdventure.frm_doodlejump.resources

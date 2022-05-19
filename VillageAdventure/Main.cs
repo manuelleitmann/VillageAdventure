@@ -67,6 +67,12 @@ namespace VillageAdventure
            
             pbx_background.Controls.Add(pbx_menuButton);
             pbx_menuButton.BackColor = Color.Transparent;
+
+            pbx_background.Controls.Add(pbx_sign);
+            pbx_sign.BackColor = Color.Transparent;
+           
+            pbx_background.Controls.Add(pbx_w2);
+            pbx_w2.BackColor = Color.Transparent;
             #endregion
         }
 
@@ -109,7 +115,11 @@ namespace VillageAdventure
             }
             #endregion
 
-            if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent1.Bounds))
+            if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_logo.Bounds))
+            {
+                pbx_logo.Visible = false;
+            }
+                if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent1.Bounds))
             {
                 //set the tent to a new location to prevent getting in a loop
                 pbx_tent1.Location = new Point(800, 800);
@@ -131,7 +141,7 @@ namespace VillageAdventure
             {
                 pbx_tent2.Location = new Point(800, 800);
 
-                DialogResult dialogResult = MessageBox.Show("Do you want to play PacMan? (Early Development Phase)", "PacMan", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Do you want to play PacMan?", "PacMan", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     PacMan openPacMan = new PacMan();
@@ -144,44 +154,31 @@ namespace VillageAdventure
                     pbx_tent2.Location = new Point(33, 352);
                 }
             }
-            if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent3.Bounds))
+            if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_w2.Bounds))
             {
-                pbx_tent3.Location = new Point(800, 800);
+                pbx_w2.Location = new Point(800, 800);
 
-                DialogResult dialogResult = MessageBox.Show("Do you want to play Doodle Jump? (Early development phase)", "Doodle Jump", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    frm_doodlejump openDoodleJump = new frm_doodlejump();
-                    this.Hide();
-                    openDoodleJump.ShowDialog();
-                    this.Close();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    pbx_tent3.Location = new Point(33, 352);
-                }
+                WorldTwo openWorldTwo = new WorldTwo();
+                this.Hide();
+                openWorldTwo.ShowDialog();
+                this.Close();
             }
 
             CheckBounds();
         }
 
-        private void tmr_main_Tick(object sender, EventArgs e)
+        private async Task AddExplodablePictureBox()
         {
-            //to make the logo invisable
-            pbx_logo.Visible = false;
-            //to disable the timer --> timer only starts when mouse hovers the menu button --> hover effect always lasts for exactly one second
-            tmr_main.Enabled = false;
-            tmr_main.Interval = 1000;
-            //change image of the menu button back to normal
-            pbx_menuButton.Image = VillageAdventure.Properties.Resources.menuButton;
+            this.Controls.Add(pbx_logo);
+            await Task.Delay(3000);
+            pbx_logo.Dispose();
         }
-
+     
         private void pbx_menuButton_MouseHover(object sender, EventArgs e)
         {
             //switch picture when mouse hovers
             pbx_menuButton.Image = VillageAdventure.Properties.Resources.menuButtonHover;
             //enable the timer
-            tmr_main.Enabled = true;
         }
 
         private void pbx_menuButton_Click(object sender, EventArgs e)

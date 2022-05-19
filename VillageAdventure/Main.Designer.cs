@@ -29,8 +29,8 @@ namespace VillageAdventure
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tmr_main = new System.Windows.Forms.Timer(this.components);
+            this.pbx_sign = new System.Windows.Forms.PictureBox();
+            this.pbx_w2 = new System.Windows.Forms.PictureBox();
             this.pbx_menuButton = new System.Windows.Forms.PictureBox();
             this.pbx_logo = new System.Windows.Forms.PictureBox();
             this.pbx_mainCharacter = new System.Windows.Forms.PictureBox();
@@ -49,6 +49,8 @@ namespace VillageAdventure
             this.pbx_fir2 = new System.Windows.Forms.PictureBox();
             this.pbx_bush4 = new System.Windows.Forms.PictureBox();
             this.pbx_background = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_sign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_w2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_menuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_mainCharacter)).BeginInit();
@@ -69,11 +71,24 @@ namespace VillageAdventure
             ((System.ComponentModel.ISupportInitialize)(this.pbx_background)).BeginInit();
             this.SuspendLayout();
             // 
-            // tmr_main
+            // pbx_sign
             // 
-            this.tmr_main.Enabled = true;
-            this.tmr_main.Interval = 5000;
-            this.tmr_main.Tick += new System.EventHandler(this.tmr_main_Tick);
+            this.pbx_sign.Image = global::VillageAdventure.Properties.Resources.Sign;
+            this.pbx_sign.Location = new System.Drawing.Point(295, 92);
+            this.pbx_sign.Name = "pbx_sign";
+            this.pbx_sign.Size = new System.Drawing.Size(72, 77);
+            this.pbx_sign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbx_sign.TabIndex = 21;
+            this.pbx_sign.TabStop = false;
+            // 
+            // pbx_w2
+            // 
+            this.pbx_w2.BackColor = System.Drawing.Color.Transparent;
+            this.pbx_w2.Location = new System.Drawing.Point(-21, -36);
+            this.pbx_w2.Name = "pbx_w2";
+            this.pbx_w2.Size = new System.Drawing.Size(560, 50);
+            this.pbx_w2.TabIndex = 20;
+            this.pbx_w2.TabStop = false;
             // 
             // pbx_menuButton
             // 
@@ -264,6 +279,8 @@ namespace VillageAdventure
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 615);
+            this.Controls.Add(this.pbx_sign);
+            this.Controls.Add(this.pbx_w2);
             this.Controls.Add(this.pbx_menuButton);
             this.Controls.Add(this.pbx_logo);
             this.Controls.Add(this.pbx_mainCharacter);
@@ -290,6 +307,8 @@ namespace VillageAdventure
             this.Text = "Village Adventure";
             this.Load += new System.EventHandler(this.frm_main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_main_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_sign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_w2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_menuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_mainCharacter)).EndInit();
@@ -331,8 +350,9 @@ namespace VillageAdventure
         private System.Windows.Forms.PictureBox pbx_bush3;
         private System.Windows.Forms.PictureBox pbx_bush4;
         private System.Windows.Forms.PictureBox pbx_logo;
-        private System.Windows.Forms.Timer tmr_main;
         private System.Windows.Forms.PictureBox pbx_menuButton;
+        private System.Windows.Forms.PictureBox pbx_sign;
+        private System.Windows.Forms.PictureBox pbx_w2;
     }
 }
 
