@@ -109,6 +109,8 @@ namespace VillageAdventure
             this.pbx_wall3 = new System.Windows.Forms.PictureBox();
             this.pbx_pacMan = new System.Windows.Forms.PictureBox();
             this.tmr_openDoor = new System.Windows.Forms.Timer(this.components);
+            this.lbl_random = new System.Windows.Forms.Label();
+            this.lbl_random2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_rightUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_upDownLeft2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_upDownLeft)).BeginInit();
@@ -251,7 +253,7 @@ namespace VillageAdventure
             // pbx_ghost1
             // 
             this.pbx_ghost1.BackColor = System.Drawing.Color.Lime;
-            this.pbx_ghost1.Location = new System.Drawing.Point(328, 256);
+            this.pbx_ghost1.Location = new System.Drawing.Point(340, 170);
             this.pbx_ghost1.Name = "pbx_ghost1";
             this.pbx_ghost1.Size = new System.Drawing.Size(50, 50);
             this.pbx_ghost1.TabIndex = 153;
@@ -969,12 +971,35 @@ namespace VillageAdventure
             this.tmr_openDoor.Interval = 1000;
             this.tmr_openDoor.Tick += new System.EventHandler(this.tmr_openDoor_Tick);
             // 
+            // lbl_random
+            // 
+            this.lbl_random.AutoSize = true;
+            this.lbl_random.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_random.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbl_random.Location = new System.Drawing.Point(154, 24);
+            this.lbl_random.Name = "lbl_random";
+            this.lbl_random.Size = new System.Drawing.Size(0, 13);
+            this.lbl_random.TabIndex = 160;
+            // 
+            // lbl_random2
+            // 
+            this.lbl_random2.AutoSize = true;
+            this.lbl_random2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_random2.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbl_random2.Location = new System.Drawing.Point(269, 24);
+            this.lbl_random2.Name = "lbl_random2";
+            this.lbl_random2.Size = new System.Drawing.Size(0, 13);
+            this.lbl_random2.TabIndex = 161;
+            this.lbl_random2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // PacMan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(923, 580);
+            this.Controls.Add(this.lbl_random2);
+            this.Controls.Add(this.lbl_random);
             this.Controls.Add(this.pbx_ghost1);
             this.Controls.Add(this.pbx_ghost2);
             this.Controls.Add(this.pbx_ghost3);
@@ -1136,6 +1161,7 @@ namespace VillageAdventure
             ((System.ComponentModel.ISupportInitialize)(this.pbx_wall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_pacMan)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1220,5 +1246,7 @@ namespace VillageAdventure
         private System.Windows.Forms.PictureBox pbx_wall3;
         private System.Windows.Forms.PictureBox pbx_pacMan;
         private System.Windows.Forms.Timer tmr_openDoor;
+        private System.Windows.Forms.Label lbl_random;
+        private System.Windows.Forms.Label lbl_random2;
     }
 }

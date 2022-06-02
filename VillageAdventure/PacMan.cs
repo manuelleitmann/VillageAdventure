@@ -20,6 +20,11 @@ namespace VillageAdventure
         public bool moveRight = true;
         public bool moveUp = true;
         public bool moveDown = true;
+        public bool gUp;
+        public bool gDown;
+        public bool gRight;
+        public bool gLeft;
+        public int ghostController;
 
 
         public PacMan()
@@ -63,11 +68,15 @@ namespace VillageAdventure
 
         private void PacMan_Load(object sender, EventArgs e)
         {
-
+            //random only goes left
+            Random rghost = new Random();
+            ghostController = rghost.Next(1, 2);
         }
+
 
         private void tmr_movePacman_Tick_1(object sender, EventArgs e)
         {
+        #region PacManControl
             foreach (Control x in Controls)
             {
                 if (x is PictureBox && x.Tag.ToString() == "upDownFalse" && pbx_pacMan.Bounds.IntersectsWith(x.Bounds))
@@ -186,6 +195,7 @@ namespace VillageAdventure
                 {
                     pbx_pacMan.Location = new Point(390, 517);
                 }
+
             }
             CharacterMovement giveDirections = new CharacterMovement();
 
@@ -210,19 +220,73 @@ namespace VillageAdventure
             }
             pbx_pacMan.Location = new Point(giveDirections.x, giveDirections.y);
 
+            #endregion
 
+            #region GhostControl
+            foreach (Control x in Controls)
+            {
+
+                if (x is PictureBox && x.Tag.ToString() == "upDownFalse" && pbx_ghost1.Bounds.IntersectsWith(x.Bounds))
+                {
+                                        
+                    if(ghostController == 1)
+                    {
+                        gLeft = true;
+                        gRight = false;
+                        gUp = false;
+                        gDown = false;
+                    }
+                    if (ghostController == 2)
+                    {
+                        gLeft = false;
+                        gRight = true;
+                        gUp = false;
+                        gDown = false;
+                    }
+
+                    if (gLeft == true)
+                    {
+                        lbl_random.Text = "True";
+                    }
+                    if(gRight == false)
+                    {
+                        lbl_random2.Text = "False";
+                    }
+                }
+                
+            }
+
+            CharacterMovement gDirection = new CharacterMovement();
+
+            gDirection.x = pbx_ghost1.Location.X;
+            gDirection.y = pbx_ghost1.Location.Y;
+
+            if (gUp == true)
+            {
+                gDirection.MoveUp();
+            }
+            if (gDown == true)
+            {
+                gDirection.MoveDown();
+            }
+            if (gLeft == true)
+            {
+                gDirection.MoveLeft();
+            }
+            if (gRight == true)
+            {
+                gDirection.MoveRight();
+            }
+
+            pbx_ghost1.Location = new Point(gDirection.x, gDirection.y);
+            #endregion
         }
 
         //Make door come back after a few seconds
         private void tmr_openDoor_Tick(object sender, EventArgs e)
-        {
-            pbx_door.Location = new Point(800, 800);
-            //if (pbx_door.Bounds.IntersectsWith(pbx_doorIndicator.Bounds))
-            //{
-            //    pbx_door.Location = new Point(297, 226);
-            //}
-            //tmr_openDoor.Interval = 1000;
-           
+        {   
+            pbx_door.Visible = false;
+            pbx_door.Enabled = false;
         }
     }
 }
