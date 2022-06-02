@@ -185,7 +185,7 @@ namespace VillageAdventure
             // tmr_time
             // 
             this.tmr_time.Enabled = true;
-            this.tmr_time.Interval = 350;
+            this.tmr_time.Interval = 1000;
             this.tmr_time.Tick += new System.EventHandler(this.tmr_time_Tick);
             // 
             // pbx_collisionGameOver

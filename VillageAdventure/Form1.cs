@@ -85,14 +85,13 @@ namespace VillageAdventure
             
             #region random Platforms           
             Random rnd = new Random();                     
-            
             platformPositionHeight = rnd.Next(150, 400);//create first platform - Picturebox Height = 123 --> random between 150 and 591
             pbx_randomPlatform.BackColor = Color.Black;
-            pbx_randomPlatform.Size = new Size(150, 20);
-            pbx_randomPlatform.Location = new Point(1000, platformPositionHeight);
+            pbx_randomPlatform.Size = new Size(250, 20);
+            pbx_randomPlatform.Location = new Point(1000,platformPositionHeight);
             pbx_randomPlatform.Tag = "platform";
             pbx_randomPlatform.Visible = true;
-            //Controls.Add(pbx_randomPlatform);//without this the pictureboxes wouldn't spawn
+            Controls.Add(pbx_randomPlatform);//without this the pictureboxes wouldn't spawn
             #endregion
             
             pbx_collisionSpawnNew.Location = new Point(0,-1);//set new point outside of the form ----- TODO:create pictureboxes for spawning platforms again
@@ -154,8 +153,8 @@ namespace VillageAdventure
                 Random rnd = new Random();
                 int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform.BackColor = Color.Blue;
-                pbx_newPlatform.BorderStyle = BorderStyle.FixedSingle;
-                pbx_newPlatform.Size = new Size(150, 20);
+                pbx_newPlatform.BorderStyle = BorderStyle.None;
+                pbx_newPlatform.Size = new Size(250, 20);
                 pbx_newPlatform.Location = new Point(1000, platformPositionHeight);
                 pbx_newPlatform.Tag = "platform";
                 pbx_newPlatform.Visible = true;
@@ -175,7 +174,7 @@ namespace VillageAdventure
                 int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform2.BackColor = Color.Yellow;
                 pbx_newPlatform2.BorderStyle = BorderStyle.FixedSingle;
-                pbx_newPlatform2.Size = new Size(150, 20);
+                pbx_newPlatform2.Size = new Size(250, 20);
                 pbx_newPlatform2.Location = new Point(1000, platformPositionHeight);
                 pbx_newPlatform2.Tag = "platform";
                 pbx_newPlatform2.Visible = true;
@@ -194,7 +193,7 @@ namespace VillageAdventure
                 Random rnd = new Random();
                 int platformPositionHeight = rnd.Next(150, 400);
                 pbx_newPlatform3.BackColor = Color.Red;
-                pbx_newPlatform3.Size = new Size(150, 20);
+                pbx_newPlatform3.Size = new Size(250, 20);
                 pbx_newPlatform3.Location = new Point(1000, platformPositionHeight);
                 pbx_newPlatform3.Tag = "platform";
                 pbx_newPlatform3.Visible = true;

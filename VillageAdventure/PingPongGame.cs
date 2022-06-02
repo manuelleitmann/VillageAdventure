@@ -23,6 +23,8 @@ namespace VillageAdventure
         private int speedBallY = 8;
         private int pointsLeft;
         private int pointsRight;
+        //Others
+        private int randomPosition;
         public PingPongGame()
         {
             InitializeComponent();
@@ -79,8 +81,11 @@ namespace VillageAdventure
             }
             #endregion
             #region automatic movement right platform
-            Random rnd = new Random();
-            pbx_platformRight.Top = locationY -50;
+            if(pbx_platformRight.Top >= 0 || pbx_platformRight.Top + pbx_platformRight.Height <= ClientSize.Height)
+            {
+                Random rnd = new Random();
+                pbx_platformRight.Top = locationY - rnd.Next(-5, 5);
+            }
             #endregion
         }
 
@@ -104,26 +109,26 @@ namespace VillageAdventure
                     pbx_platformLeft.Top -= platformSpeed;
                 }             
             }
-            else if(e.KeyCode == Keys.Up)
+            else if (e.KeyCode == Keys.Up)
             {
-                if(pbx_platformRight.Top > 0)
+                if (pbx_platformRight.Top > 0)
                 {
                     pbx_platformRight.Top -= platformSpeed;
-                }           
+                }
             }
-            if(e.KeyCode == Keys.S)
+            if (e.KeyCode == Keys.S)
             {
                 if(pbx_platformLeft.Top + pbx_platformLeft.Height < ClientSize.Height)
                 {
                     pbx_platformLeft.Top += platformSpeed;
                 }               
             }
-            else if(e.KeyCode == Keys.Down)
+            else if (e.KeyCode == Keys.Down)
             {
-                if(pbx_platformRight.Top + pbx_platformRight.Height < ClientSize.Height)
+                if (pbx_platformRight.Top + pbx_platformRight.Height < ClientSize.Height)
                 {
                     pbx_platformRight.Top += platformSpeed;
-                }          
+                }
             }
             #endregion
         }
