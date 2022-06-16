@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,18 +12,19 @@ namespace VillageAdventure
             InitializeComponent();
             this.KeyPreview = true;
             #region Transparent
+            //to add the graphics to the background to make them transparent
             pbx_background.Controls.Add(pbx_fire);
             pbx_fire.BackColor = Color.Transparent;
 
             pbx_background.Controls.Add(pbx_fir1);
             pbx_fir1.BackColor = Color.Transparent;
-            
+
             pbx_background.Controls.Add(pbx_fir2);
             pbx_fir2.BackColor = Color.Transparent;
 
             pbx_background.Controls.Add(pbx_fir3);
             pbx_fir3.BackColor = Color.Transparent;
-            
+
             pbx_background.Controls.Add(pbx_tree1);
             pbx_tree1.BackColor = Color.Transparent;
 
@@ -64,13 +60,10 @@ namespace VillageAdventure
 
             pbx_background.Controls.Add(pbx_logo);
             pbx_logo.BackColor = Color.Transparent;
-           
-            pbx_background.Controls.Add(pbx_menuButton);
-            pbx_menuButton.BackColor = Color.Transparent;
 
             pbx_background.Controls.Add(pbx_sign);
             pbx_sign.BackColor = Color.Transparent;
-           
+
             pbx_background.Controls.Add(pbx_w2);
             pbx_w2.BackColor = Color.Transparent;
             #endregion
@@ -87,9 +80,9 @@ namespace VillageAdventure
             #region Keys
             if (e.KeyCode == Keys.W)
             {
-                    giveDirections.MoveUp();
-                    //to refresh the location of the picture box
-                    pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
+                giveDirections.MoveUp();
+                //to refresh the location of the picture box
+                pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
             }
             else if (e.KeyCode == Keys.S)
             {
@@ -105,21 +98,14 @@ namespace VillageAdventure
             {
                 giveDirections.MoveRight();
                 pbx_mainCharacter.Location = new Point(giveDirections.x, giveDirections.y);
-            }
-            else if (e.KeyCode == Keys.Escape)
-            {
-                Menu openMenu = new Menu();
-                this.Hide();
-                openMenu.ShowDialog();
-                this.Close();
-            }
+            }        
             #endregion
 
             if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_logo.Bounds))
             {
                 pbx_logo.Visible = false;
             }
-                if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent1.Bounds))
+            if (pbx_mainCharacter.Bounds.IntersectsWith(pbx_tent1.Bounds))
             {
                 //set the tent to a new location to prevent getting in a loop
                 pbx_tent1.Location = new Point(800, 800);
@@ -167,28 +153,6 @@ namespace VillageAdventure
             CheckBounds();
         }
 
-        private async Task AddExplodablePictureBox()
-        {
-            this.Controls.Add(pbx_logo);
-            await Task.Delay(3000);
-            pbx_logo.Dispose();
-        }
-     
-        private void pbx_menuButton_MouseHover(object sender, EventArgs e)
-        {
-            //switch picture when mouse hovers
-            pbx_menuButton.Image = VillageAdventure.Properties.Resources.menuButtonHover;
-            //enable the timer
-        }
-
-        private void pbx_menuButton_Click(object sender, EventArgs e)
-        {
-            Menu openMenu = new Menu();
-            this.Hide();
-            openMenu.ShowDialog();
-            this.Close();
-        }
-
         public void CheckBounds()
         {
             //to check if the player leaves the form
@@ -197,7 +161,7 @@ namespace VillageAdventure
                 pbx_mainCharacter.Location = new Point(233, 442);
                 DialogResult checkBounds = MessageBox.Show("You can't go there!", "Stay in the Village!", MessageBoxButtons.OK);
             }
-           
+
             if (pbx_mainCharacter.Top < 0 || pbx_mainCharacter.Height + pbx_mainCharacter.Top > this.ClientRectangle.Height)
             {
                 pbx_mainCharacter.Location = new Point(233, 442);

@@ -115,7 +115,6 @@ namespace VillageAdventure
             this.pbx_menuButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_menuButton2.TabIndex = 55;
             this.pbx_menuButton2.TabStop = false;
-            this.pbx_menuButton2.Click += new System.EventHandler(this.pbx_menuButton2_Click_1);
             this.pbx_menuButton2.MouseHover += new System.EventHandler(this.pbx_menuButton2_MouseHover_1);
             // 
             // pbx_mainCharacter2

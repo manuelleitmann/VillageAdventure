@@ -130,11 +130,38 @@
   <data name="bush" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="car" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carbluedown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carbluedown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carblueleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carblueleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carblueright" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carblueright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carreddown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carreddown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carredleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carredleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carredright" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carredright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DoodleJumpPlatformtransparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DoodleJumpPlatformtransparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FireGIF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FireGIF.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ghost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ghost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LogoBGremoved" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoBGremoved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -144,6 +171,18 @@
   </data>
   <data name="menuButtonHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuButtonHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PacManHead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PacManHead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PacManHeadDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PacManHeadDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PacManHeadLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PacManHeadLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PacManHeadUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PacManHeadUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Player" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

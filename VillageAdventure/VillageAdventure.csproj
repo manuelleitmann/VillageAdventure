@@ -49,35 +49,17 @@
     <Compile Include="CharacterMovement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_doodlejump.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_doodlejump.Designer.cs">
-      <DependentUpon>frm_doodlejump.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
     <Compile Include="PacMan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PacMan.Designer.cs">
       <DependentUpon>PacMan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PacManTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PacManTest.Designer.cs">
-      <DependentUpon>PacManTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,20 +75,11 @@
     <Compile Include="WorldTwo.Designer.cs">
       <DependentUpon>WorldTwo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frm_doodlejump.resx">
-      <DependentUpon>frm_doodlejump.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PacMan.resx">
       <DependentUpon>PacMan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PacManTest.resx">
-      <DependentUpon>PacManTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -187,6 +160,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\signWorld1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacManHead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carreddown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carbluedown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carblueleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carredleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carredright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carblueright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ghost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacManHeadUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacManHeadDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacManHeadLeft.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

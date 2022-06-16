@@ -65,15 +65,18 @@ namespace VillageAdventure
                 //to refresh the location of the picture box
                 pbx_car.Height = 72;
                 pbx_car.Width = 44;
+                pbx_car.Image = Properties.Resources.car;
             }
             else if (e.KeyCode == Keys.S)
             {
                 giveDirections.MoveDown();
                 pbx_car.Height = 72;
                 pbx_car.Width = 44;
+                pbx_car.Image = Properties.Resources.carbluedown;
             }
             else if (e.KeyCode == Keys.A)
             {
+                pbx_car.Image = Properties.Resources.carblueleft;
                 giveDirections.MoveLeft();
                 pbx_car.Height = 44;
                 pbx_car.Width = 72;
@@ -105,26 +108,20 @@ namespace VillageAdventure
                 giveDirections.MoveRight();
                 pbx_car.Height = 44;
                 pbx_car.Width = 72;
-            }
-            else if (e.KeyCode == Keys.Escape)
-            {
-                Menu openMenu = new Menu();
-                this.Hide();
-                openMenu.ShowDialog();
-                this.Close();
-            }
+            }           
             pbx_car.Location = new Point(giveDirections.x, giveDirections.y);
         }
 
-        //remove multiple timers --> try to make with one timer
+
         private void tmr_raceGame_Tick(object sender, EventArgs e)
         {
-            int x = 7;
+            int x = 10;
             int y = 0;
 
 
             if (pbx_enemy.Bounds.IntersectsWith(pbx_changeDirection.Bounds))
             {
+                pbx_enemy.Image = Properties.Resources.carreddown;
                 tmr_down.Enabled = true;
                 tmr_raceGame.Enabled = false;
 
@@ -163,7 +160,7 @@ namespace VillageAdventure
 
         private void tmr_left_Tick(object sender, EventArgs e)
         {
-            int x = 7;
+            int x = 10;
             int y = 0;
 
             pbx_enemy.Top += y;
@@ -219,10 +216,11 @@ namespace VillageAdventure
         private void tmr_down_Tick(object sender, EventArgs e)
         {
             int x = 0;
-            int y = 7;
+            int y = 10;
 
             if (pbx_enemy.Bounds.IntersectsWith(pbx_changeDirectionLeft.Bounds))
             {
+                pbx_car.Image = Properties.Resources.carredleft;
                 tmr_down.Enabled = false;
                 tmr_left.Enabled = true;
 
@@ -302,11 +300,6 @@ namespace VillageAdventure
                     this.Close();
                 }
             }
-        }
-
-        private void RaceGame_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

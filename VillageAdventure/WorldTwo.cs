@@ -116,13 +116,6 @@ namespace VillageAdventure
                 giveDirections.MoveRight();
                 pbx_mainCharacter2.Location = new Point(giveDirections.x, giveDirections.y);
             }
-            else if (e.KeyCode == Keys.Escape)
-            {
-                Menu openMenu = new Menu();
-                this.Hide();
-                openMenu.ShowDialog();
-                this.Close();
-            }
             #endregion
 
             if (pbx_mainCharacter2.Bounds.IntersectsWith(pbx_w1.Bounds))
@@ -156,14 +149,6 @@ namespace VillageAdventure
             pbx_menuButton2.Image = VillageAdventure.Properties.Resources.menuButtonHover;
             //enable the timer
             tmr_w2.Enabled = true;
-        }
-
-        private void pbx_menuButton2_Click_1(object sender, EventArgs e)
-        {
-            Menu openMenu2 = new Menu();
-            this.Hide();
-            openMenu2.ShowDialog();
-            this.Close();
         }
     }
 }
